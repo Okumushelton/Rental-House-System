@@ -14,7 +14,7 @@
                         <p class="is-6">
                             <span class="has-text-dark">Name :</span> {{$favorite->property->name}} <br>
                             <span class="has-text-dark">Location :</span> {{$favorite->property->city}} <br>
-                            <span class="has-text-dark">Est :</span> Rs. {{number_format($favorite->property->amount,2)}}</p>
+                            <span class="has-text-dark">Est :</span> KShs. {{number_format($favorite->property->amount,2)}}</p>
                     </div>
                 </div>
 

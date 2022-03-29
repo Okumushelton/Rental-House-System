@@ -14,7 +14,7 @@
                         <p class="is-6">
                             <span class="has-text-dark">Name :</span> {{$apartment->property->name}} <br>
                             <span class="has-text-dark">Location :</span> {{$apartment->property->city}} <br>
-                            <span class="has-text-dark">Est :</span> Rs. {{number_format($apartment->property->amount,2)}}</p>
+                            <span class="has-text-dark">Est :</span> KShs. {{number_format($apartment->property->amount,2)}}</p>
                     </div>
                 </div>
 

@@ -50,7 +50,7 @@
                   @csrf
                     <div class="field has-addons searchinput">
                         <p class="control has-icons-left is-expanded">
-                          <input class="input is-large inputsearchbox" type="text" placeholder="Search by City,Postal Code" id="search" name="searchquery">
+                          <input class="input is-large inputsearchbox" type="text" placeholder="Search by area name e.g Kileleshwa" id="search" name="searchquery">
                           <span class="icon is-small is-left">
                             <i class="fas fa-search"></i>
                           </span>
@@ -63,18 +63,17 @@
                     <div class="field has-addons">
                         <div class="control has-icons-left">
                             <div class="select selectbox is-small">
-                              <select name="minprice">
+                            <select name="minprice">
                                 <option value="0">Price(Min)</option>
-                                <option value="10000">10 Thousands</option>
-                                <option value="20000">20 Thousands</option>
-                                <option value="30000">30 Thousands</option>
-                                <option value="40000">40 Thousands</option>
-                                <option value="50000">50 Thousands</option>
-                                <option value="60000">60 Thousands</option>
-                                <option value="70000">70 Thousands</option>
-                                <option value="80000">80 Thousands</option>
-                                <option value="90000">90 Thousands</option>
-                                <option value="100000">100 Thousands</option>
+                                <option value="10000">10,000 KShs</option>
+                                <option value="20000">20,000 KShs</option>
+                                <option value="30000">30,000 KShs</option>
+                                <option value="40000">40,000 KShs</option>
+                                <option value="50000">50,000 KShs</option>
+                                <option value="60000">60,000 KShs</option>
+                                <option value="70000">70,000 KShs</option>
+                                <option value="80000">80,000 KShs</option>
+                                <option value="90000">90,000 KShs</option>
                                 </select>
                             </div>
                             <span class="icon is-small is-left">
@@ -84,17 +83,16 @@
                         <div class="control has-icons-left">
                           <div class="select selectbox is-small">
                             <select name="maxprice">
-                              <option value="9999999999999999999999999999999">Price(Max)</option>
-                              <option value="10000">10 Thousands</option>
-                              <option value="20000">20 Thousands</option>
-                              <option value="30000">30 Thousands</option>
-                              <option value="40000">40 Thousands</option>
-                              <option value="50000">50 Thousands</option>
-                              <option value="60000">60 Thousands</option>
-                              <option value="70000">70 Thousands</option>
-                              <option value="80000">80 Thousands</option>
-                              <option value="90000">90 Thousands</option>
-                              <option value="100000">100 Thousands</option>
+                                <option value="9999999999999999999999999999999">Price(Max)</option>
+                                <option value="20000">20,000 KShs</option>
+                                <option value="30000">30,000 KShs</option>
+                                <option value="40000">40,000 KShs</option>
+                                <option value="50000">50,000 KShs</option>
+                                <option value="60000">60,000 KShs</option>
+                                <option value="70000">70,000 KShs</option>
+                                <option value="80000">80,000 KShs</option>
+                                <option value="90000">90,000 KShs</option>
+                                <option value="90000">100,000 KShs</option>
                             </select>
                           </div>
                           <span class="icon is-small is-left">

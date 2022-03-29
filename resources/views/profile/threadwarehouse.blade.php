@@ -14,7 +14,7 @@
                         <p class="is-6">
                             <span class="has-text-dark">Name :</span> {{$warehouse->property->name}} <br>
                             <span class="has-text-dark">Location :</span> {{$warehouse->property->city}} <br>
-                            <span class="has-text-dark">Est :</span> Rs. {{number_format($warehouse->property->amount,2)}}</p>
+                            <span class="has-text-dark">Est :</span> KShs. {{number_format($warehouse->property->amount,2)}}</p>
                     </div>
                 </div>
 

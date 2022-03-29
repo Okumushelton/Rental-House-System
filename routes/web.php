@@ -27,16 +27,16 @@ Route::get('/apartment', 'PageController@apartment');
 Route::get('/about', 'PageController@about');
 Route::get('/contactus', 'PageController@contactus');
 
-Route::get('/add', 'PageController@addProperty');
-Route::get('/add/house', 'PageController@addHouse');
-Route::post('/add/house', 'PropertyController@addHouse');
-Route::get('/add/apartment', 'PageController@addApartment');
-Route::post('/add/apartment', 'PropertyController@addApartment');
+// Route::get('/add', 'PageController@addProperty');
+// Route::get('/add/house', 'PageController@addHouse');
+// Route::post('/add/house', 'PropertyController@addHouse');
+// Route::get('/add/apartment', 'PageController@addApartment');
+// Route::post('/add/apartment', 'PropertyController@addApartment');
 
 //testing api access
 Route::get('/add/map', 'PageController@dismap');
 
-Route::get('/house/serach', 'PageController@housesearch');
+// Route::get('/house/serach', 'PageController@housesearch');
 Route::get('/house/{house}', 'HouseController@viewHouse');
 
 Route::post('/house/{house}', 'HouseController@searchHouse');
@@ -145,13 +145,16 @@ Route::post('/admin/user/{user}/delete', 'AdminController@adminDeleteUser')->mid
 Route::get('/admin/user/add', 'AdminController@showAdminAddUser')->middleware('auth:admin');
 Route::post('/admin/user/add', 'AdminController@adminAddUser')->middleware('auth:admin');
 
+//Admin Add Property
 Route::get('/admin/addproperty', 'PageController@addProperty')->middleware('auth:admin');
+Route::get('admin/add/house', 'PageController@addHouse')->middleware('auth:admin');
+Route::post('admin/add/house', 'PropertyController@addHouse')->middleware('auth:admin');
+Route::get('admin/add/apartment', 'PageController@addApartment')->middleware('auth:admin');
+Route::post('admin/add/apartment', 'PropertyController@addApartment')->middleware('auth:admin');
 
-Route::get('admin/add', 'PageController@addProperty');
-Route::get('admin/add/house', 'PageController@addHouse');
-Route::post('admin/add/house', 'PropertyController@addHouse');
-Route::get('admin/add/apartment', 'PageController@addApartment');
-Route::post('admin/add/apartment', 'PropertyController@addApartment');
+//Admin view Property
+//Route::get('/admin/property/house', 'HouseController@viewHouse')->middleware('auth:admin');
+Route::get('/admin/house/{house}', 'HouseController@viewHouse')->middleware('auth:admin');
 
 Route::get('/admin/admin/all', 'AdminController@viewAllAdmin')->middleware('auth:admin');
 Route::get('/admin/admin/add', 'AdminController@showAdminAddAdmin')->middleware('auth:admin');

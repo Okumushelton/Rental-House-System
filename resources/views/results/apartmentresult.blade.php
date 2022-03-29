@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>RealProperty</title>
+    <title>Rental Property</title>
 
     {{-- CSS Files --}}
     <link rel="stylesheet" href="/css/bulma.min.css">
@@ -119,9 +119,9 @@
 
     <div class="grayme">
         <div class="row printarea">
-            @if($apartments->count() > 0) 
+            @if($apartments->count() > 0)
             @foreach ($apartments as $apartment)
-                @include('results.apartmentthread') 
+                @include('results.apartmentthread')
             @endforeach
             @else
                 @include('results.noresult')

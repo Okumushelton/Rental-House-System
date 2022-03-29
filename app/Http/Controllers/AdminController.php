@@ -5,10 +5,7 @@ namespace App\Http\Controllers;
 use Alert;
 use App\Admin;
 use App\Apartment;
-use App\Article;
-use App\Building;
 use App\House;
-use App\Land;
 use App\MailNotification;
 use App\Mail\ContactMail;
 use App\Mail\EmailNotification;
@@ -17,7 +14,6 @@ use App\Property;
 use App\ReportProperty;
 use App\User;
 use App\UserEmail;
-use App\Warehouse;
 use Auth;
 use function GuzzleHttp\json_encode;
 use Illuminate\Http\Request;
@@ -121,31 +117,10 @@ class AdminController extends Controller
 
     }
 
-    public function showAdminEditLand(Land $land)
-    {
-
-        return view('admin.master', compact('land'));
-
-    }
-
-    public function showAdminEditBuilding(Building $building)
-    {
-
-        return view('admin.master', compact('building'));
-
-    }
-
     public function showAdminEditApartment(Apartment $apartment)
     {
 
         return view('admin.master', compact('apartment'));
-
-    }
-
-    public function showAdminEditWarehouse(Warehouse $warehouse)
-    {
-
-        return view('admin.master', compact('warehouse'));
 
     }
 
@@ -168,31 +143,6 @@ class AdminController extends Controller
 
         return view('admin.master', compact('properties'));
     }
-
-    public function viewAllLand()
-    {
-
-        $properties = Property::where(function ($query) {
-
-            $query->where('type', '=', 'land');
-
-        })->paginate(25);
-
-        return view('admin.master', compact('properties'));
-    }
-
-    public function viewAllBuilding()
-    {
-
-        $properties = Property::where(function ($query) {
-
-            $query->where('type', '=', 'building');
-
-        })->paginate(25);
-
-        return view('admin.master', compact('properties'));
-    }
-
     public function viewAllApartment()
     {
 
@@ -204,19 +154,6 @@ class AdminController extends Controller
 
         return view('admin.master', compact('properties'));
     }
-
-    public function viewAllWarehouse()
-    {
-
-        $properties = Property::where(function ($query) {
-
-            $query->where('type', '=', 'warehouse');
-
-        })->paginate(25);
-
-        return view('admin.master', compact('properties'));
-    }
-
     public function viewAllUsers()
     {
 
@@ -545,23 +482,6 @@ class AdminController extends Controller
         Alert::success('Property has been unlocked!', 'UNLOCKED!')->autoclose(3000);
         return back();
 
-    }
-
-    public function allArticles()
-    {
-
-        $articles = Article::orderBy('id', 'desc')
-            ->paginate(20);
-
-        return view('admin.master', compact('articles'));
-    }
-
-    public function deleteArticle(Article $article)
-    {
-
-        DB::table('articles')->where('id', '=', $article->id)->delete();
-        Alert::success('Article has been deleted successfully!', 'Deleted Successfully!')->autoclose(3000);
-        return back();
     }
 
     public function allInquery()

@@ -93,16 +93,16 @@
                                         <button class="button is-success" onclick="showPnox()">Show Contact Number</button>
                                         <p class="has-text-dark customerpno" id="pnox"><a href="tel:{{$apartment->property->contactNo}}" class="nounnounderlinelink">{{$apartment->property->contactNo}}</a></p>
                                         <hr>
-                                        <p class="owneramount">Owner Estimated: <span class="has-text-success has-text-weight-bold">{{number_format($apartment->property->amount,2)}}</span>                                            LKR</p>
-                                        <p class="bidamount">Current Highest Offer: <span class="has-text-danger has-text-weight-bold">   
+                                        <p class="owneramount">Owner Estimated: <span class="has-text-success has-text-weight-bold">{{number_format($apartment->property->amount,2)}}</span>                                            KShs</p>
+                                        <p class="bidamount">Current Highest Offer: <span class="has-text-danger has-text-weight-bold">
                                                 @if ($apartment->offers->count() > 0)
                                                     {{number_format($apartment->offers->sortBy('offerAmount')->last()->offerAmount,2)}}
                                                 @else
                                                     0.00
                                                 @endif
                                                 0.00
-                                            </span> LKR</p>
-                                        <div id="myBtnM"><button class="button is-link">Make an offer</button></div>
+                                            </span> KShs</p>
+                                        <div id="myBtnM"><button class="button is-link">BOOK HOUSE</button></div>
                                         <br>
                                         @include('results.offeralerts')
                                     </div>
@@ -125,15 +125,15 @@
                         <button class="button is-success" onclick="showPno()">Call Owner</button>
                         <p class="has-text-dark customerpno" id="pno"><a href="tel:{{$apartment->property->contactNo}}" class="nounnounderlinelink">{{$apartment->property->contactNo}}</a></p>
                         <hr>
-                        <p class="owneramount">Owner Estimated: <span class="has-text-success has-text-weight-bold">{{number_format($apartment->property->amount,2)}}</span>                            LKR</p>
-                        <p class="bidamount">Current Highest Offer: <span class="has-text-danger has-text-weight-bold">   
+                        <p class="owneramount">Monthly Rate: <span class="has-text-success has-text-weight-bold">{{number_format($apartment->property->amount,2)}}</span>                            KShs</p>
+                        <!-- <p class="bidamount">Current Highest Offer: <span class="has-text-danger has-text-weight-bold"> -->
                                 @if ($apartment->offers->count() > 0)
                                     {{number_format($apartment->offers->sortBy('offerAmount')->last()->offerAmount,2)}}
                                 @else
-                                    0.00
+                                    <!-- 0.00 -->
                                 @endif
-                            </span> LKR</p>
-                            <div id="myBtn"><button class="button is-link">Make an offer</button></div>
+                            <!-- </span> KShs</p> -->
+                            <div id="myBtn"><button class="button is-link">Book House</button></div>
                             <br>
                             @include('results.offeralerts')
                         </div>
@@ -166,7 +166,7 @@
                             </style>
                         </div>
                         <br>
-                        
+
                     </div>
                 </div>
                 <a class="button is-info nounnounderlinebtn" href="http://www.google.com/maps/place/{{$apartment->property->latitude}},{{$apartment->property->longitude}}"
@@ -189,7 +189,7 @@
                             <div class="control">
                             <input class="input" type="hidden" name="owner" value="{{$apartment->property->user->id}}">
                             <input class="input" type="hidden" name="path" value="{{Request::path()}}">
-                            
+
                             @if(Auth::check())
                                 <input class="input" type="hidden" name="sender" value="{{auth()->user()->id}}">
                             @else
@@ -207,10 +207,10 @@
                                     <input class="input {{ $errors->has('name') ? ' is-danger' : '' }}" type="text" placeholder="Name" name="name">
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-user"></i>
-                                    </span> 
+                                    </span>
                                     {!! $errors->first('name', '<p class="help-block has-text-danger">:message</p>') !!}
                                 </p>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -240,7 +240,7 @@
                                 <div class="field has-addons">
                                     <p class="control">
                                         <a class="button is-static">
-                                          +94
+                                          +254
                                         </a>
                                     </p>
                                     <p class="control is-expanded">
@@ -248,7 +248,7 @@
                                     </p>
                                 </div>
                                 {!! $errors->first('pno', '<p class="help-block has-text-danger">:message</p>') !!}
-                                <p class="help has-text-link">Do not enter the first zero</p>
+                                <p class="help has-text-link has-text-warning">Do not enter the first zero</p>
                             </div>
                         </div>
                     </div>
@@ -300,19 +300,12 @@
                 <br>
 
             </div>
-            {{-- Contact Owner Emaik --}}
+            <!-- {{-- Contact Owner Emaik --}}
             <div class="notification is-danger">
                 <button class="delete"></button>
-                <strong>Important information:</strong> This ad has been posted on Realproperty.lk by the above mentioned
-                advertiser. Realproperty.lk does not have any connection with this advertiser, nor do we vet the advertisers,
-                guarantee their services, responsible for the accuracy of the ad's content or are responsible for services
-                provided by the advertisers. Realproperty.lk does not provide any service other than list the advertisements
-                posted by advertisers. You will be contacting the advertiser (owner/agent) of this property directly. We
-                advise you to take precaution when making any payments or signing any agreements and be alert of any possible
-                scams. If making any payments we recommend that you have two permanent & verified methods of contact of the
-                payment receiver such as their landline number and home/business address.
             </div>
             <a class="is-pulled-right link reportad" id="report"><span><i class="far fa-flag"></i></span><span class="has-text-balck"> Report Advertisement</span></a>
+            <br> -->
             <br>
 
         </div>
@@ -320,7 +313,7 @@
     </div>
     </div>
     {{-- Footer --}}
-    @include('layouts.footer') 
+    @include('layouts.footer')
     @include('layouts.offerapartment')
     @include('layouts.reportapartment')
     {{-- JavaScript Files --}}

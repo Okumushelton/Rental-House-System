@@ -46,14 +46,14 @@
                       <img src="/uploads/avatars/{{$user->avatar}}" alt="Image" class="is-rounded">
                     </figure>
                     <div class="address">
-                      <div class="has-text-link has-text-weight-semibold">Offer Amount: Rs. {{number_format($offer->offerAmount,2)}}</div>
+                      <div class="has-text-link has-text-weight-semibold">Offer Amount: KShs. {{number_format($offer->offerAmount,2)}}</div>
                       <div class="is-7"><span class="subtitle is-7">To: {{$user->name}}
-                            <span class="subtitle is-7 has-text-black-bis has-text-weight-bold"> (Registered User) </span> 
+                            <span class="subtitle is-7 has-text-black-bis has-text-weight-bold"> (Registered User) </span>
                         </span>
                       </div>
                       <div class="subtitle is-7">Contact Details:<span class="subtitle is-7"> {{$user->email}} | {{$user->phoneNo}}</span></div>
                       <div class="subtitle is-7 is-pulled-right">Regarding :<span class="subtitle is-7"> <a href="/{{checkPropertyTypeByOfferId($offer->id)}}/{{getPropertyTypeIdByOfferId($offer->id)}}" target="_blank">View Property</a></span>
-                        <br> 
+                        <br>
                       <span class="subtitle is-7 has-text-right">Offer Sent :<span class="has-text-black-bis has-text-weight-bold">{{$offer->created_at->diffForHumans()}}</span></span></div>
                     </div>
                   </div>
@@ -93,8 +93,7 @@
           </div>
         </div>
       </div>
-      
-      
+
+
       </div>
       </div>
- 

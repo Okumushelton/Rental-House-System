@@ -6,7 +6,7 @@
           <button class="delete closeoffer" aria-label="close"></button>
       </header>
       <section class="modal-card-body">
-      <p class="subtitle is-6 has-text-centered"><strong class="has-text-danger">Important : Your offer should be higher than current offer</strong></p>
+      <p class="subtitle is-6 has-text-centered"><strong class="has-text-danger">Upon booking your property. You are expected to move in within a week. <br /> Failure your property will be given to another client.</strong></p>
       <form action="/house/{{$house->id}}/offer" method="post">
           @csrf
           <div class="field">

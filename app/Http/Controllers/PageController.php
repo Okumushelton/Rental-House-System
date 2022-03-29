@@ -123,15 +123,15 @@ class PageController extends Controller
         return view('layouts.property.addhouse', array('user' => Auth::user()));
     }
 
+    public function addApartment()
+    {
+        return view('layouts.property.addapartment', array('user' => Auth::user()));
+    }
+
     // public function addApartment()
     // {
     //     return view('layouts.property.apartment', array('user' => Auth::user()));
     // }
-
-    public function addApartment()
-    {
-        return view('layouts.property.apartment', array('user' => Auth::user()));
-    }
 
     public function dismap()
     {

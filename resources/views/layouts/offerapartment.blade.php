@@ -2,27 +2,28 @@
   <div class="modal-background"></div>
   <div class="modal-card">
       <header class="modal-card-head">
-          <p class="modal-card-title has-text-centered">Submit your offer</p>
+          <p class="modal-card-title has-text-centered">Book Apartment</p>
           <button class="delete closeoffer" aria-label="close"></button>
       </header>
       <section class="modal-card-body">
-      <p class="subtitle is-6 has-text-centered"><strong class="has-text-danger">Important : Your offer should be higher than current offer</strong></p>
+      <p class="subtitle is-6 has-text-centered"><strong class="has-text-danger"> A fee of 3,000 KShs is paid to book a house. <br />Upon booking your property. You are expected to move in within a week. <br /> Failure your property will be given to another client.</strong></p>
       <form action="/apartment/{{$apartment->id}}/offer" method="post">
           @csrf
           <div class="field">
               <div class="control column is-8 is-offset-2">
-                  <input class="input is-7" name="offeramount" type="text" placeholder="Enter Your Offer Amount">
+                  <h6>Enter Your Phone Number</h6>
+                  <input class="input is-6" type="text" placeholder="Enter phone number to initiate payment">
                   <input name="propertyid" type="text" value="{{$apartment->property_id}}" hidden>
                   <input name="apartmentid" type="text" value="{{$apartment->id}}" hidden>
               </div>
           </div>
           <div class="field is-centered has-text-centered">
-              <button type="submit" class="button is-info"><span class="savebutton">Submit</span></button>
+              <button type="submit" class="button is-info"><span class="savebutton">PAY VIA MPESA</span></button>
           </div>
       </form>
       </section>
       <footer class="modal-card-foot is-centered has-text-centered">
-        <p class="subtitle is-7 has-text-centered">If making any payments we recommend that you have two permanent & verified methods of contact of the payment receiver such as their landline number and home/business address.
+        <p class="subtitle is-7 has-text-centered">When making any payments we recommend that you have a verified method of contact of the payment receiver such as their home/business address or e-mail address.
         </p>
       </footer>
   </div>

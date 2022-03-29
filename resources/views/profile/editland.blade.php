@@ -59,7 +59,7 @@
                             </div>
                             <div class="field">
                                 <div class="control">
-                                    <label for="name">Property Price <strong>(Rs.)</strong></label>
+                                    <label for="name">Property Price <strong>(KShs.)</strong></label>
                                     <input class="input is-primary" type="text" name="amount" value="{{$land->property->amount}}">
                                 </div>
                             </div>
@@ -146,7 +146,7 @@
                                     <br>
                                     <div class="select is-primary is-full">
                                         <select name="province">
-                                                
+
                                             <option value="{{$land->property->province}}" selected>{{$land->property->province}}</option>
                                             <option value="Central">Central</option>
                                             <option value="Eastern">Eastern</option>
@@ -161,7 +161,7 @@
                                     </div>
                                 </div>
                             </div>
-    
+
                             <div class="field">
                                 <div class="control">
                                     <label for="name">Property Description</label>
@@ -198,7 +198,7 @@
                                             <button class="button is-success addmore" type="button"><i class="glyphicon glyphicon-plus"></i>More</button>
                                         </div>
                                     </div>
-    
+
                                     <div class="clone hide">
                                         <div class="control-group input-group" style="margin-top:10px">
                                             <input type="file" name="filename[]" class="form-control">
@@ -294,7 +294,7 @@
                             </div>
                         </div>
                     </div>
-    
+
                 </form>
             </div>
         </div>
@@ -313,17 +313,17 @@
                     center: {lat: {{$land->property->latitude}}, lng: {{$land->property->longitude}} },
                     zoom: 15
                     });
-    
+
                     var marker = new google.maps.Marker({
                     position: {lat: {{$land->property->latitude}}, lng: {{$land->property->longitude}} },
                     map: map,
                     draggable: true,
                     });
-    
+
                     var input = document.getElementById('searchmap');
                     var searchBox = new google.maps.places.SearchBox(input);
                     //map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-    
+
                     google.maps.event.addListener(searchBox,'places_changed',function(){
                         var places = searchBox.getPlaces();
                         var bounds = new google.maps.LatLngBounds();
@@ -331,17 +331,17 @@
                         for (i = 0; place=places[i]; i++) {
                             bounds.extend(place.geometry.location);
                             marker.setPosition(place.geometry.location);
-                            
+
                         }
-    
+
                         map.fitBounds(bounds);
                         map.setZoom(15);
                     });
-    
+
                     google.maps.event.addListener(marker,'position_changed',function(){
                         var lat = marker.getPosition().lat();
                         var lng = marker.getPosition().lng();
-    
+
                         $('#lat').val(lat);
                         $('#lng').val(lng);
                     });
@@ -351,16 +351,16 @@
         async defer></script>
     <script type="text/javascript">
         $(document).ready(function() {
-        
-              $(".addmore").click(function(){ 
+
+              $(".addmore").click(function(){
                   var html = $(".clone").html();
                   $(".increment").after(html);
               });
-        
-              $("body").on("click",".removepic",function(){ 
+
+              $("body").on("click",".removepic",function(){
                   $(this).parents(".control-group").remove();
               });
-        
+
             });
     </script>
     <script>

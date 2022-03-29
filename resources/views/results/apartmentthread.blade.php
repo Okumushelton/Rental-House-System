@@ -15,7 +15,7 @@
                     </div>
                     <div class="media-content">
                         <p class="subtitle is-5 has-text-dark has-text-weight-medium">{{$apartment->property->name}}</p>
-                        <p class="title is-4 has-text-dark">Rs. {{number_format($apartment->property->amount,2)}}</p>
+                        <p class="title is-4 has-text-dark">KShs. {{number_format($apartment->property->amount,2)}}</p>
                         <p class="subtitle is-6 has-text-link"><span>@</span>{{$apartment->property->user->name}}</p>
                     </div>
                 </div>

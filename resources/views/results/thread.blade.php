@@ -15,11 +15,11 @@
                         </div>
                         <div class="media-content">
                             <p class="subtitle is-5 has-text-dark has-text-weight-medium">{{$house->property->name}}</p>
-                            <p class="title is-4 has-text-dark">Rs. {{number_format($house->property->amount,2)}}</p>
+                            <p class="title is-4 has-text-dark">KShs. {{number_format($house->property->amount,2)}}</p>
                             <p class="subtitle is-6 has-text-link"><span>@</span>{{$house->property->user->name}}</p>
                         </div>
                     </div>
-    
+
                     <div class="content">
                         {{str_limit(str_replace("&nbsp;",'',strip_tags($house->property->description)),100)}}
                         <br>

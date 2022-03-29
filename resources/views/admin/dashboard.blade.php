@@ -72,6 +72,7 @@
 
     }
     </script>
+
 <div class="column displaybox profileback">
   @include('admin.navprofile')
   <nav class="breadcrumb has-arrow-separator profileback breadcrumbcss" aria-label="breadcrumbs">
@@ -80,7 +81,7 @@
       <li class="is-active"><a href="/admin">Dashboard</a></li>
     </ul>
   </nav>
-  <div class="subtitle has-text-black-bis">Summary View</div>
+  <div class="subtitle has-text-black-bis">Summary Report</div>
   <div class="columns">
     <div class="column">
         <div id="chart_div">
@@ -92,9 +93,8 @@
           <div class="column" id="chart_month"></div>
         </div>
         <div class="columns">
-          <div class="column" id="chart_report">
-          </div>
           <div class="column" id="chart_availability"></div>
+          <div class="column" id="chart_report"></div>
         </div>
     </div>
   </div>
@@ -145,7 +145,7 @@
   </div>
   <hr>
   <div class="subtitle has-text-black-bis">Latest User Registations</div>
-  <div class="column tableshow style=" overflow-x: auto ">   
+  <div class="column tableshow" style=" overflow-x: auto ">
             <table class="table ">
               <thead>
                 <tr>

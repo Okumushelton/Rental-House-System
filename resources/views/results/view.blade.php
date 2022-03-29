@@ -94,8 +94,8 @@
                                         <button class="button is-success" onclick="showPnox()">Show Contact Number</button>
                                         <p class="has-text-dark customerpno" id="pnox">071 300 90 95</p>
                                         <hr>
-                                        <p class="owneramount">Owner Estimated: <span class="has-text-success has-text-weight-bold">5900000.00</span>                                            LKR</p>
-                                        <p class="bidamount">Current Highest Offer: <span class="has-text-danger has-text-weight-bold">4500000.00</span>                                            LKR</p>
+                                        <p class="owneramount">Owner Estimated: <span class="has-text-success has-text-weight-bold">5900000.00</span>                                            KShs</p>
+                                        <p class="bidamount">Current Highest Offer: <span class="has-text-danger has-text-weight-bold">4500000.00</span>                                            KShs</p>
                                         <button class="button is-link">Make an offer</button>
                                     </div>
 
@@ -111,14 +111,14 @@
                             <img class="is-rounded is-horizontal-center" src="/uploads/avatars/1552585682.jpg">
                         </figure>
                     </div>
-                    <div class="subtitle has-text-centered">@NanoEstate</div>
+                    <div class="subtitle has-text-centered">@hyrax</div>
                     <div class="has-text-centered">
                         <button class="button is-dark" onclick="location.href='#contactbox'">Email Owner</button>
                         <button class="button is-success" onclick="showPno()">Call Owner</button>
-                        <p class="has-text-dark customerpno" id="pno">071 300 90 95</p>
+                        <p class="has-text-dark customerpno" id="pno">071 617 62 06</p>
                         <hr>
-                        <p class="owneramount">Owner Estimated: <span class="has-text-success has-text-weight-bold">5900000.00</span> LKR</p>
-                        <p class="bidamount">Current Highest Offer: <span class="has-text-danger has-text-weight-bold">4500000.00</span> LKR</p>
+                        <p class="owneramount">Owner Estimated: <span class="has-text-success has-text-weight-bold">5900000.00</span> KShs</p>
+                        <p class="bidamount">Current Highest Offer: <span class="has-text-danger has-text-weight-bold">4500000.00</span> KShs</p>
                         <button class="button is-link">Make an offer</button>
                     </div>
                 </div>
@@ -310,7 +310,7 @@
                 <a href="" class="is-pulled-right link reportad"><span><i class="far fa-flag"></i></span><span class="has-text-balck"> Report Advertisement</span></a>
                 <br>
             </div>
-            
+
         </div>
 
     </div>
