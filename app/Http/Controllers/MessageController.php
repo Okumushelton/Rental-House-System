@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Mail\InqueryEmail;
 use App\Message;
 use Illuminate\Http\Request;
-use App\UserEmail;
-use App\Mail\ContactMail;
 
 class MessageController extends Controller
 {
@@ -35,38 +33,35 @@ class MessageController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
-     * 
+     *
      */
     public function contactUsEmail()
     {
-        $this->validate(request(),[
+        $this->validate(request(), [
             'name' => 'required|string|max:255',
             'email' => 'required|string|max:255|email',
             'type' => 'required',
-            'message' => 'required|string|max:2500|min:10'
+            'message' => 'required|string|max:2500|min:10',
         ]);
-        
+
         $message = Message::create([
             'name' => request('name'),
             'email' => request('email'),
             'type' => request('type'),
-            'message' => request('message')
+            'message' => request('message'),
         ]);
 
-        if(strcmp("General Inquery", request('type')) == 0){
-            \Mail::to('general@realproperty.lk')->send(new InqueryEmail($message));
+        if (strcmp("General Inquery", request('type')) == 0) {
+            \Mail::to('okumushelton1@gmail.com')->send(new InqueryEmail($message));
+        } elseif (strcmp("Technical Inquery", request('type')) == 0) {
+            \Mail::to('okumushelton1@gmail.com')->send(new InqueryEmail($message));
+        } else {
+            \Mail::to('okumushelton1@gmail.com')->send(new InqueryEmail($message));
         }
-        elseif(strcmp("Technical Inquery", request('type')) == 0){
-            \Mail::to('technical@realproperty.lk')->send(new InqueryEmail($message));
-        }
-        else{
-            \Mail::to('service@realproperty.lk')->send(new InqueryEmail($message));
-        }
-        
+        // service@realproperty.lk
+
         return back();
     }
-
-    
 
     /**
      * Display the specified resource.

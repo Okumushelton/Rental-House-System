@@ -118,7 +118,7 @@
                         <p class="has-text-dark customerpno" id="pno">071 617 62 06</p>
                         <hr>
                         <p class="owneramount">Owner Estimated: <span class="has-text-success has-text-weight-bold">5900000.00</span> KShs</p>
-                        <p class="bidamount">Current Highest Offer: <span class="has-text-danger has-text-weight-bold">4500000.00</span> KShs</p>
+                        <!-- <p class="bidamount">Current Highest Offer: <span class="has-text-danger has-text-weight-bold">4500000.00</span> KShs</p> -->
                         <button class="button is-link">Make an offer</button>
                     </div>
                 </div>
@@ -298,10 +298,10 @@
                 <br>
                 <div class="notification is-danger">
                     <button class="delete"></button>
-                    <strong>Important information:</strong> This ad has been posted on Realproperty.lk by the above mentioned
-                    advertiser. Realproperty.lk does not have any connection with this advertiser, nor do we vet the advertisers,
+                    <strong>Important information:</strong> This ad has been posted on Hyrax by the above mentioned
+                    advertiser. Hyrax does not have any connection with this advertiser, nor do we vet the advertisers,
                     guarantee their services, responsible for the accuracy of the ad's content or are responsible for services
-                    provided by the advertisers. Realproperty.lk does not provide any service other than list the advertisements
+                    provided by the advertisers. Hyrax does not provide any service other than list the advertisements
                     posted by advertisers. You will be contacting the advertiser (owner/agent) of this property directly.
                     We advise you to take precaution when making any payments or signing any agreements and be alert of any
                     possible scams. If making any payments we recommend that you have two permanent & verified methods of

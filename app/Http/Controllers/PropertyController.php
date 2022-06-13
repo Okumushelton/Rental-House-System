@@ -39,7 +39,8 @@ class PropertyController extends Controller
         //     'nbus' => 'required',
 
         // ]);
-
+        // $data[] = new Array();
+        $data = [];
         if ($request->hasfile('filename')) {
 
             foreach ($request->file('filename') as $image) {
@@ -62,7 +63,8 @@ class PropertyController extends Controller
         $property->description = request('description');
         $property->contactNo = request('contactno');
         $property->contatctEmail = request('contactemail');
-        $property->images = json_encode('1');
+        // $property->images = json_encode('1');
+        $property->images = json_encode($data);
         $property->latitude = request('lat');
         $property->longitude = request('lng');
         $property->availability = ('YES');
@@ -85,6 +87,7 @@ class PropertyController extends Controller
         return back()->with('message', 'Your property has been successfully added!');
 
     }
+
     public function addApartment(Request $request)
     {
 
@@ -112,6 +115,7 @@ class PropertyController extends Controller
 
         // ]);
 
+        $data = [];
         if ($request->hasfile('filename')) {
 
             foreach ($request->file('filename') as $image) {
@@ -136,7 +140,7 @@ class PropertyController extends Controller
         $property->images = json_encode($data);
         $property->latitude = request('lat');
         $property->longitude = request('lng');
-        $property->availability = ('available');
+        $property->availability = ('YES');
         $property->save();
 
         $apartment = new Apartment();

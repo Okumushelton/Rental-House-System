@@ -179,6 +179,7 @@
                     {!! $apartment->property->description !!}
                 </p>
             </div>
+
             {{-- Contact Owner Email Box Start Here --}}
             <hr>
             <div class="subtitle has-text-weight-semibold" id="contactbox">Contact Owner</div>

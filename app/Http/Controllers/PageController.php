@@ -60,7 +60,7 @@ class PageController extends Controller
     }
 
     // Search Result Methods
-    public function housesearch()
+    public function searchHouse()
     {
         $houses = House::all();
         return view('results.houseresult', compact('houses'));

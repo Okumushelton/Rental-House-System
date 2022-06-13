@@ -59,7 +59,7 @@
                         </div>
                         <div class="field">
                             <div class="control">
-                                <label for="name">Property Price <strong>(Rs.)</strong></label>
+                                <label for="name">Property Price <strong>(KShs.)</strong></label>
                                 <input class="input is-primary" type="text" name="amount" value="{{$house->property->amount}}">
                             </div>
                         </div>
@@ -146,7 +146,7 @@
                                 <br>
                                 <div class="select is-primary is-full">
                                     <select name="province">
-                                            
+
                                         <option value="{{$house->property->province}}" selected>{{$house->property->province}}</option>
                                         <option value="Central">Central</option>
                                         <option value="Eastern">Eastern</option>
@@ -354,7 +354,7 @@
                     for (i = 0; place=places[i]; i++) {
                         bounds.extend(place.geometry.location);
                         marker.setPosition(place.geometry.location);
-                        
+
                     }
 
                     map.fitBounds(bounds);
@@ -374,16 +374,16 @@
     async defer></script>
 <script type="text/javascript">
     $(document).ready(function() {
-    
-          $(".addmore").click(function(){ 
+
+          $(".addmore").click(function(){
               var html = $(".clone").html();
               $(".increment").after(html);
           });
-    
-          $("body").on("click",".removepic",function(){ 
+
+          $("body").on("click",".removepic",function(){
               $(this).parents(".control-group").remove();
           });
-    
+
         });
 </script>
 <script>

@@ -5,7 +5,6 @@ namespace App\Mail;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Contracts\Queue\ShouldQueue;
 
 class EmailNotification extends Mailable
 {
@@ -29,7 +28,8 @@ class EmailNotification extends Mailable
      */
     public function build()
     {
-        return $this->subject('New Message - Realproperty.LK')
-                    ->markdown('emails.emailnotification');
+        return $this->subject('New Message - Hyrax')
+        // ('New Message - Realproperty.LK')
+            ->markdown('emails.emailnotification');
     }
 }

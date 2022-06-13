@@ -31,7 +31,7 @@ class AdminController extends Controller
     public function index()
     {
 
-        $properties = Property::limit(5)->orderBy('id', 'desc')->get();
+        $properties = Property::limit(7)->orderBy('id', 'desc')->get();
         $users = User::limit(5)->orderBy('id', 'desc')->get();
 
         //Type Graph

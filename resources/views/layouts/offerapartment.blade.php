@@ -6,7 +6,7 @@
           <button class="delete closeoffer" aria-label="close"></button>
       </header>
       <section class="modal-card-body">
-      <p class="subtitle is-6 has-text-centered"><strong class="has-text-danger"> A fee of 3,000 KShs is paid to book a house. <br />Upon booking your property. You are expected to move in within a week. <br /> Failure your property will be given to another client.</strong></p>
+      <p class="subtitle is-6 has-text-centered"><strong class="has-text-danger"> A fee of 3,000 KShs is paid to book a house. <br />Upon booking your property, you are expected to move in within a week. <br /> Failure, your property will be given to another client.</strong></p>
       <form action="/apartment/{{$apartment->id}}/offer" method="post">
           @csrf
           <div class="field">

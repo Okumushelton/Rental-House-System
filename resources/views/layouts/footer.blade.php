@@ -4,7 +4,7 @@
     <style>
         body {
                 font-family: 'Nunito', sans-serif;
-                background-color:#575c63;
+                background-color:#189AB4;
             }
         </style>
 </head>
@@ -12,9 +12,10 @@
 <footer class="">
     <div class="content has-text-centered has-text-blue">
         <p class="has-text-white has-text-centered">
-        <strong class="has-text-white">hyrax</strong> by <a href="" class="has-text-white">NyuMba Investments Ltd.</a>
+        <strong class="has-text-white">hyrax</strong> by <a href="" class="has-text-white">NyuMba Investments Ltd.</a><br />
+        <small class="has-text-white">1284, Moi Avenue, Nairobi</small>
+
         </p>
-        <small>1284, Moi Avenue, Nairobi</small>
     </div>
     <div class="has-text-centered has-text-white">
         <span class="icon">

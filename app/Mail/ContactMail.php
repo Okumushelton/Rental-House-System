@@ -3,10 +3,9 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
+use Illuminate\Http\Request;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Http\Request;
 
 class ContactMail extends Mailable
 {
@@ -30,7 +29,7 @@ class ContactMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('New Message - Realproperty.LK')
-                    ->markdown('emails.contactemail');
+        return $this->subject('New Message - Shelton')
+            ->markdown('emails.contactemail');
     }
 }

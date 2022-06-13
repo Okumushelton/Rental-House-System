@@ -38,25 +38,18 @@
               <div class="field has-addons">
                   <div class="control has-icons-left">
                       <div class="select selectbox is-small">
-                          <select name="minprice">
-                          <option value="0">Price(Min)</option>
-                          <option value="1000000">1 Million</option>
-                          <option value="2000000">2 Million</option>
-                          <option value="3000000">3 Million</option>
-                          <option value="4000000">4 Million</option>
-                          <option value="5000000">5 Million</option>
-                          <option value="6000000">6 Million</option>
-                          <option value="7000000">7 Million</option>
-                          <option value="8000000">8 Million</option>
-                          <option value="9000000">9 Million</option>
-                          <option value="10000000">10 Million</option>
-                          <option value="50000000">50 Million</option>
-                          <option value="100000000">100 Million</option>
-                          <option value="200000000">200 Million</option>
-                          <option value="1000000000">1 Billion</option>
-                          <option value="50000000000">50 Billion</option>
-                          <option value="100000000000">100 Billion</option>
-                          </select>
+                      <select name="minprice">
+                                <option value="0">Price(Min)</option>
+                                <option value="10000">10,000 KShs</option>
+                                <option value="20000">20,000 KShs</option>
+                                <option value="30000">30,000 KShs</option>
+                                <option value="40000">40,000 KShs</option>
+                                <option value="50000">50,000 KShs</option>
+                                <option value="60000">60,000 KShs</option>
+                                <option value="70000">70,000 KShs</option>
+                                <option value="80000">80,000 KShs</option>
+                                <option value="90000">90,000 KShs</option>
+                                </select>
                       </div>
                       <span class="icon is-small is-left">
                         <i class="fas fa-dollar-sign"></i>
@@ -65,24 +58,17 @@
                   <div class="control has-icons-left">
                     <div class="select selectbox is-small">
                         <select name="maxprice">
-                          <option value="9999999999999999999999999999999">Price(Max)</option>
-                          <option value="1000000">1 Million</option>
-                          <option value="2000000">2 Million</option>
-                          <option value="3000000">3 Million</option>
-                          <option value="4000000">4 Million</option>
-                          <option value="5000000">5 Million</option>
-                          <option value="6000000">6 Million</option>
-                          <option value="7000000">7 Million</option>
-                          <option value="8000000">8 Million</option>
-                          <option value="9000000">9 Million</option>
-                          <option value="10000000">10 Million</option>
-                          <option value="50000000">50 Million</option>
-                          <option value="100000000">100 Million</option>
-                          <option value="200000000">200 Million</option>
-                          <option value="1000000000">1 Billion</option>
-                          <option value="50000000000">50 Billion</option>
-                          <option value="100000000000">100 Billion</option>
-                        </select>
+                                <option value="9999999999999999999999999999999">Price(Max)</option>
+                                <option value="20000">20,000 KShs</option>
+                                <option value="30000">30,000 KShs</option>
+                                <option value="40000">40,000 KShs</option>
+                                <option value="50000">50,000 KShs</option>
+                                <option value="60000">60,000 KShs</option>
+                                <option value="70000">70,000 KShs</option>
+                                <option value="80000">80,000 KShs</option>
+                                <option value="90000">90,000 KShs</option>
+                                <option value="90000">100,000 KShs</option>
+                            </select>
                     </div>
                     <span class="icon is-small is-left">
                       <i class="fas fa-dollar-sign"></i>

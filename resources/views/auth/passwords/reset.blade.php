@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Reset Your Password - RealProperty.lk</title>
+    <title>Reset Your Password - Hyrax</title>
 
     {{-- CSS Files --}}
     <link rel="stylesheet" href="/css/bulma.min.css">
@@ -45,10 +45,10 @@
                     <form method="POST" action="{{ route('password.update') }}">
                             @csrf
                             <input type="hidden" name="token" value="{{ $token }}">
-        
+
                             <div class="field">
                                 <label for="email" class="label">{{ __('E-Mail Address') }}</label>
-        
+
                                 <div class="control has-icons-left">
                                     <input id="email" type="email" class="input{{ $errors->has('email') ? ' is-danger' : '' }}" name="email" value="{{ $email ?? old('email') }}" required autofocus>
                                     <span class="icon is-small is-left">
@@ -61,10 +61,10 @@
                                     @endif
                                 </div>
                             </div>
-        
+
                             <div class="field">
                                 <label for="password" class="label">{{ __('Password') }}</label>
-        
+
                                 <div class="control has-icons-left">
                                     <input id="password" type="password" class="input{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
                                     <span class="icon is-small is-left">
@@ -77,10 +77,10 @@
                                     @endif
                                 </div>
                             </div>
-        
+
                             <div class="field">
                                 <label for="password-confirm" class="label">{{ __('Confirm Password') }}</label>
-        
+
                                 <div class="control has-icons-left">
                                     <input id="password-confirm" type="password" class="input" name="password_confirmation" required>
                                     <span class="icon is-small is-left">
@@ -88,7 +88,7 @@
                                           </span>
                                 </div>
                             </div>
-        
+
                             <div class="field">
                                 <div class="column is-offset-4">
                                     <button type="submit" class="button is-primary">

@@ -16,7 +16,8 @@ class HouseController extends Controller
 {
     public function viewHouse(House $house)
     {
-        return view('results.viewhouse', compact('house'));
+        // return view('results.viewhouse', compact('house'));
+        return view('results.viewhouse')->with(compact('house'));
     }
 
     public function searchHouse(Request $request)

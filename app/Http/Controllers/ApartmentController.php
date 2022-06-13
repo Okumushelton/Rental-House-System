@@ -27,6 +27,30 @@ class ApartmentController extends Controller
         $minPrice = $request->input('minprice');
         $maxPrice = $request->input('maxprice');
 
+        if ($swimmingPool = $request->has('swimmingpool')) {
+
+            $swimmingPool = "Available";
+        } else {
+
+            $swimmingPool = "%%";
+        }
+
+        if ($noOfFloors = $request->has('balcony')) {
+
+            $noOfFloors = 2;
+        } else {
+
+            $noOfFloors = 0;
+        }
+
+        if ($outdoor = $request->has('outdoor')) {
+
+            $outdoor = "Available";
+        } else {
+
+            $outdoor = "%%";
+        }
+
         $apartments = Apartment::whereHas('property', function ($query) use ($room) {
             $query->where('noOfRooms', '>=', $room);
         })->whereHas('property', function ($query) use ($keyword) {

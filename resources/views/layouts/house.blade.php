@@ -43,7 +43,7 @@
                   </div>
 
                   {{-- Search Box --}}
-                <form method="POST" action="/apartment/search">
+                <form method="POST" action="/house/search">
                   @csrf
                     <div class="field has-addons searchinput">
                         <p class="control has-icons-left is-expanded">

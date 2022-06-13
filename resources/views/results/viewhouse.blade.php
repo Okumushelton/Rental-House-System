@@ -35,11 +35,10 @@
                     @foreach (json_decode($house->property->images) as $image)
                     <div class="carousel-cell"><img src="/uploads/property/house/{{$image}}" /></div>
                     @endforeach
-
                 </div>
 
                 <div class="carousel carousel-nav" data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": false }'>
-                    @foreach (json_decode($house->property->images) as $image)
+                @foreach (json_decode($house->property->images) as $image)
                     <div class="carousel-cell"><img src="/uploads/property/house/{{$image}}" /></div>
                     @endforeach
                 </div>
@@ -98,14 +97,14 @@
                                         <button class="button is-success" onclick="showPnox()">Show Contact Number</button>
                                         <p class="has-text-dark customerpno" id="pnox"><a href="tel:{{$house->property->contactNo}}" class="nounnounderlinelink">{{$house->property->contactNo}}</a></p>
                                         <hr>
-                                        <p class="owneramount">Owner Estimated: <span class="has-text-success has-text-weight-bold">{{number_format($house->property->amount,2)}}</span>                                            KShs</p>
-                                        <p class="bidamount">Current Highest Offer: <span class="has-text-danger has-text-weight-bold">
+                                        <p class="owneramount">Owner Estimated: <span class="has-text-success has-text-weight-bold">{{number_format($house->property->amount,2)}}</span>                      KSHs</p>
+                                        <!-- <p class="bidamount">Current Highest Offer: <span class="has-text-danger has-text-weight-bold">
                                                 @if ($house->offers->count() > 0)
                                                     {{number_format($house->offers->sortBy('offerAmount')->last()->offerAmount,2)}}
                                                 @else
                                                     0.00
                                                 @endif
-                                            </span> KShs</p>
+                                            </span> LKR</p> -->
                                         <div id="myBtnM"><button class="button is-link">BOOK HOUSE</button></div>
     @include('results.offeralerts')
                                     </div>
@@ -128,14 +127,14 @@
                         <button class="button is-success" onclick="showPno()">Call Owner</button>
                         <p class="has-text-dark customerpno" id="pno"><a href="tel:{{$house->property->contactNo}}" class="nounnounderlinelink">{{$house->property->contactNo}}</a></p>
                         <hr>
-                        <p class="owneramount">Owner Estimated: <span class="has-text-success has-text-weight-bold">{{number_format($house->property->amount,2)}}</span>                            KShs</p>
-                        <p class="bidamount">Current Highest Offer: <span class="has-text-danger has-text-weight-bold">
+                        <p class="owneramount">Owner Estimated: <span class="has-text-success has-text-weight-bold">{{number_format($house->property->amount,2)}}</span>                   KSHs</p>
+                        <!-- <p class="bidamount">Current Highest Offer: <span class="has-text-danger has-text-weight-bold">
                             @if ($house->offers->count() > 0)
                                 {{number_format($house->offers->sortBy('offerAmount')->last()->offerAmount,2)}}
                             @else
                                 0.00
                             @endif
-                        </span> KShs</p>
+                        </span> LKR</p> -->
                         <div id="myBtn"><button class="button is-link">BOOK HOUSE</button></div>
                         <br>
     @include('results.offeralerts')
@@ -176,7 +175,14 @@
                     target="_blank">Set Direction</a> {{-- </div> --}}
             <hr>
             <div class="subtitle has-text-weight-semibold">Property Description</div>
-            <div class="column is-flex-mobile">
+            <!-- <div class="column is-flex-mobile">
+                <p class="content">
+                    {!! $house->property->description !!}
+                </p>
+            </div> -->
+            <div class="notification is-warning">
+                <button class="delete"></button>
+                <strong>Property Description:</strong>
                 <p class="content">
                     {!! $house->property->description !!}
                 </p>
@@ -234,7 +240,7 @@
                         </div>
                     </div>
 
-                    <div class="field is-horizontal">
+                    <div class="field is-horizontal has-text-black">
                         <div class="field-label is-normal">
                             <label class="label">Phone No</label>
                         </div>
@@ -251,7 +257,8 @@
                                     </p>
                                 </div>
                                 {!! $errors->first('pno', '<p class="help-block has-text-danger">:message</p>') !!}
-                                <p class="help has-text-link">Do not enter the first zero</p>
+                                <p class="help has-text-danger">Do not enter the first zero</p>
+                                <!-- has-text-link -->
                             </div>
                         </div>
                     </div>
@@ -291,7 +298,7 @@
                         <div class="field-body">
                             <div class="field">
                                 <div class="control">
-                                    <button class="button is-primary" type="submit">
+                                    <button class="button is-success" type="submit">
                                         Send message
                                     </button>
                                 </div>
@@ -304,9 +311,17 @@
 
             </div>
             {{-- Contact Owner Emaik --}}
-            <div class="notification is-danger">
+            <!-- <div class="notification is-danger">
                 <button class="delete"></button>
-            </div>
+                <strong>Important information:</strong> This ad has been posted on Hyrax.lk by the above mentioned
+                advertiser. Hyrax does not have any connection with this advertiser, nor do we vet the advertisers,
+                guarantee their services, responsible for the accuracy of the ad's content or are responsible for services
+                provided by the advertisers. Hyrax does not provide any service other than list the advertisements
+                posted by advertisers. You will be contacting the advertiser (owner/agent) of this property directly. We
+                advise you to take precaution when making any payments or signing any agreements and be alert of any possible
+                scams. If making any payments we recommend that you have two permanent & verified methods of contact of the
+                payment receiver such as their landline number and home/business address.
+            </div> -->
             <a class="is-pulled-right reportad" id="report"><span><i class="far fa-flag"></i></span><span class="has-text-balck"> Report Advertisement</span></a>
             <br>
 
