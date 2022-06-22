@@ -42,7 +42,10 @@ Route::post('/house/{house}/search', 'HouseController@searchHouse');
 Route::get('/house/serach', 'PageController@housesearch');
 Route::get('/house/{house}', 'HouseController@viewHouse');
 Route::post('/house/{house}', 'HouseController@searchHouse');
+
 Route::post('/house/{house}/offer', 'OfferController@houseOffer');
+// Route::post
+
 Route::post('/house/{house}/contactowner', 'UserEmailController@houseContact');
 Route::post('/house/{house}/report', 'ReportPropertyController@houseReport');
 Route::get('/house/{house}/favorite', 'FavoriteController@favoriteHouse');
