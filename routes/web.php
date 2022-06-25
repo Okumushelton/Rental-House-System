@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -44,7 +43,9 @@ Route::get('/house/{house}', 'HouseController@viewHouse');
 Route::post('/house/{house}', 'HouseController@searchHouse');
 
 Route::post('/house/{house}/offer', 'OfferController@houseOffer');
-// Route::post
+
+//Mpesa
+Route::post('/house/{house}/book', 'MpesaController@mpesaCheckout');
 
 Route::post('/house/{house}/contactowner', 'UserEmailController@houseContact');
 Route::post('/house/{house}/report', 'ReportPropertyController@houseReport');
@@ -70,34 +71,6 @@ Route::post('/admin/apartment/{apartment}/edit', 'ApartmentController@editApartm
 Route::post('/profile/apartment/{apartment}/edit', 'ApartmentController@editApartment');
 Route::post('/profile/apartment/{apartment}/delete', 'ApartmentController@deleteApartment');
 Route::post('/admin/apartment/{apartment}/delete', 'ApartmentController@deleteApartment')->middleware('auth:admin');
-
-// Route::get('/land/serach', 'PageController@landsearch');
-// Route::get('/land/{land}', 'LandController@viewLand');
-// Route::post('/land/{land}', 'LandController@searchLand');
-// Route::post('/land/{land}/offer', 'OfferController@landOffer');
-// Route::post('/land/{land}/contactowner', 'UserEmailController@landContact');
-// Route::post('/land/{land}/report', 'ReportPropertyController@landReport');
-// Route::get('/land/{land}/favorite', 'FavoriteController@favoriteLand');
-// Route::get('/profile/land/{land}/edit', 'LandController@showEditLand')->middleware('auth');
-// Route::get('/admin/land/{land}/edit', 'AdminController@showAdminEditLand')->middleware('auth:admin');
-// Route::post('/admin/land/{land}/edit', 'LandController@editLand');
-// Route::post('/profile/land/{land}/edit', 'LandController@editLand');
-// Route::post('/profile/land/{land}/delete', 'LandController@deleteLand');
-// Route::post('/admin/land/{land}/delete', 'LandController@deleteLand')->middleware('auth:admin');
-
-// Route::get('/building/serach', 'PageController@buildingsearch');
-// Route::get('/building/{building}', 'BuildingController@viewBuilding');
-// Route::post('/building/{building}', 'BuildingController@searchBuilding');
-// Route::post('/building/{building}/offer', 'OfferController@buildingOffer');
-// Route::post('/building/{building}/contactowner', 'UserEmailController@buildingContact');
-// Route::post('/building/{building}/report', 'ReportPropertyController@buildingReport');
-// Route::get('/building/{building}/favorite', 'FavoriteController@favoriteBuilding');
-// Route::get('/profile/building/{building}/edit', 'BuildingController@showEditBuilding')->middleware('auth');
-// Route::get('/admin/building/{building}/edit', 'AdminController@showAdminEditBuilding')->middleware('auth:admin');
-// Route::post('/admin/building/{building}/edit', 'BuildingController@editBuilding');
-// Route::post('/profile/building/{building}/edit', 'BuildingController@editBuilding');
-// Route::post('/profile/building/{building}/delete', 'BuildingController@deleteBuilding');
-// Route::post('/admin/building/{building}/delete', 'BuildingController@deleteBuilding')->middleware('auth:admin');
 
 //General Route
 Route::post('/sendmessage', 'MessageController@contactUsEmail');

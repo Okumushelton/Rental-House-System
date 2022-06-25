@@ -39,4 +39,11 @@ class House extends Model
         return $this->hasMany(ReportProperty::class);
 
     }
+
+    public function mpesacheckout()
+    {
+
+        return;
+
+    }
 }
