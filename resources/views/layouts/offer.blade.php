@@ -47,7 +47,7 @@
               <p class="modal-card-title has-text-centered"><b>Pay KShs. 500 to book house</b></p>
 
               <div class="control column is-8 is-offset-2">
-                  <input class="input is-7" type="number" name="phone_number" placeholder="Enter Phone number">
+                  <input class="input is-7" type="number" name="phone_number" placeholder="Enter Phone number starting with 254">
                   <input name="propertyid" type="text" value="{{$house->property_id}}" hidden>
                   <input name="houseid" type="text" value="{{$house->id}}" hidden>
               </div>

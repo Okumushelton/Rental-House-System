@@ -59,7 +59,8 @@
                         </div>
                     </div>
                 </div>
-                  {{-- <nav class="navbar" role="navigation" class="is-centered" aria-label="main navigation">
+                  {
+                    {-- <nav class="navbar" role="navigation" class="is-centered" aria-label="main navigation">
                     <div class="navbar-brand">
                       <a role="button" class="navbar-burger burger button is-primary" aria-label="menu" aria-expanded="false" onclick="document.querySelector('.below').classList.toggle('is-active');" data-target="belownav">
                         <span aria-hidden="true"></span>
@@ -73,20 +74,8 @@
                             <a class="navbar-item menuitemnav" href="/house">
                                 Houses
                             </a>
-                            <!-- <a class="navbar-item menuitemnav" href="/land">
-                                Lands
-                            </a> -->
                             <a class="navbar-item menuitemnav" href="/apartment">
                                 Apartments
-                            </a>
-                            <a class="navbar-item menuitemnav" href="/building">
-                                Buildings
-                            </a>
-                            <a class="navbar-item menuitemnav" href="/warehouse">
-                              Warehouses
-                            </a>
-                            <a class="navbar-item menuitemnav" href="/blog">
-                              Blog
                             </a>
                             <a class="navbar-item menuitemnav" href="/about">
                               About
@@ -151,7 +140,8 @@
                     </ul>
                 </div>
             </div>
-        </nav> --}}
+        </nav> --}
+    }
 
         <main class="py-4">
             @yield('content')

@@ -30,7 +30,7 @@
       </div>
       <div class="column colorred">
         <h2 class="title is-1 has-text-white has-text-centered maketheir">Make Your</h2>
-        <h class="title is-2 has-text-white has-text-centered futurebetter">House Management Better!</h>
+        <h class="title is-2 has-text-white has-text-centered ">House Search Easier!</h>
         <p class="control has-text-centered">
           <a class="button is-primary is-inverted has-text-centered is-outlined signbuttonbelow" href="register">
               <span>SIGN UP</span>

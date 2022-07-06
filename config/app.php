@@ -231,4 +231,17 @@ return [
 
     ],
 
+    // 'debug_blacklist' => [
+    //     '_ENV' => [
+    //         'MPESA_CONSUMER_KEY',
+    //         'MPESA_CONSUMER_SWECRET',
+    //         'MPESA_SHORT_CODE',
+    //         'MPESA_STK_SHORT_CODE',
+    //         'MPESA_ENV',
+    //         'MPESA_TEST_MSISDN',
+    //         'MPESA_TEST_URL',
+    //         'MPESA_PASSKEY',
+    //         'MPESA_B2C_PASSWORD',
+    //     ],
+    // ],
 ];

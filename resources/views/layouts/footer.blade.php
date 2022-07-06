@@ -12,8 +12,8 @@
 <footer class="">
     <div class="content has-text-centered has-text-blue">
         <p class="has-text-white has-text-centered">
-        <strong class="has-text-white">hyrax</strong> by <a href="" class="has-text-white">NyuMba Investments Ltd.</a><br />
-        <small class="has-text-white">1284, Moi Avenue, Nairobi</small>
+        <strong class="has-text-white">hyrax</strong><a href="" class="has-text-white"> Investments Ltd.</a><br />
+        <small class="has-text-white">1284, Moi Avenue, <br />Nairobi</small>
 
         </p>
     </div>
