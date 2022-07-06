@@ -6,6 +6,7 @@
 - Login in to System (Multi-level Authentication: Administrator & User)
 - Google reCAPTCHA Verification (V3 – Automatic User Validation)
 - User Email Validation/Verification
+- Lipa na M-Pesa
 - Password Recovery
 - Searching Property Functions
 - Search Houses
@@ -18,7 +19,7 @@
 - Contact System Administrator
 - Add Favorites, View Favorites, Delete Favorites.
 - Contact Property Owner (Email, Phone Call)
-- Book for Property
+- Book Property
 - Report Properties
 - Warning Notification Systems
 - Sweet-Alert Notifications
@@ -31,7 +32,6 @@
 - Mark as Booked Properties
 - Change Avatar
 - Super-Admin Permission
--Lipa na M-Pesa
 
 ### Functions: Admin Panel Functions & Super admin functions
 - Display Latest Properties
@@ -46,5 +46,3 @@
 - Reply, Delete Inquiries.
 - Change Administrator’s Avatar
 - Add, Edit and Delete Admin
-
-
