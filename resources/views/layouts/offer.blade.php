@@ -28,7 +28,7 @@
   <div class="modal-background"></div>
   <div class="modal-card">
       <header class="modal-card-head">
-          <p class="modal-card-title has-text-centered">BOOK PROPERTY</p>
+          <p class="modal-card-title has-text-centered">BOOK HOUSE</p>
           <button class="delete closeoffer" aria-label="close"></button>
       </header>
 
@@ -44,7 +44,7 @@
                   <input name="propertyid" type="text" value="{{$house->property_id}}" hidden>
                   <input name="houseid" type="text" value="{{$house->id}}" hidden>
               </div> -->
-              <p class="modal-card-title has-text-centered"><b>Pay KShs. 500 to book house</b></p>
+              <p class="modal-card-title has-text-centered"><b>Pay KShs. 3000 to book house</b></p>
 
               <div class="control column is-8 is-offset-2">
                   <input class="input is-7" type="number" name="phone_number" placeholder="Enter Phone number starting with 254">
@@ -53,7 +53,7 @@
               </div>
           </div>
           <div class="field is-centered has-text-centered">
-              <button type="submit" class="button is-info" action=""><span class="savebutton">Submit</span></button>
+              <button type="submit" class="button is-info" action=""><span class="savebutton">PAY VIA MPESA</span></button>
           </div>
       </form>
       </section>

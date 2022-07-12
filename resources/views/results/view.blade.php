@@ -70,7 +70,7 @@
                             <div class="columns">
                                 <div class="column detailscolumn">
                                     <p>Property Type: <span class="has-text-weight-semibold">House</span></p>
-                                    <p>Bedrooms: <span class="has-text-weight-semibold">4</span></p>
+                                    <p>Rooms: <span class="has-text-weight-semibold">4</span></p>
                                     <p>Floor area: <span class="has-text-weight-semibold">10000</span></p>
                                     <p>No. of floors: <span class="has-text-weight-semibold">2</span></p>
                                     <p>Car parking spaces: <span class="has-text-weight-semibold">4</span></p>

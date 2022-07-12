@@ -47,6 +47,8 @@ Route::post('/house/{house}/offer', 'OfferController@houseOffer');
 //Mpesa
 Route::post('/house/{house}/book', 'MpesaController@mpesaCheckout');
 
+Route::post('/apartment/{apartment}/book', 'MpesaController@mpesaCheckout');
+
 Route::post('/house/{house}/contactowner', 'UserEmailController@houseContact');
 Route::post('/house/{house}/report', 'ReportPropertyController@houseReport');
 Route::get('/house/{house}/favorite', 'FavoriteController@favoriteHouse');
@@ -152,8 +154,8 @@ Route::post('/admin/inquery/reply', 'AdminController@replyInquery')->middleware(
 Route::post('/admin/inquery/{message}/delete', 'AdminController@deleteInquey')->middleware('auth:admin');
 
 //Book House
-Route::post('/apartment/{apartment}/book', 'BookController@bookApartment');
-Route::post('/apartment/{house}/book', 'BookController@bookHouse');
+// Route::post('/apartment/{apartment}/book', 'BookController@bookApartment');
+// Route::post('/apartment/{house}/book', 'BookController@bookHouse');
 
 // Auth::routes();
 Auth::routes(['verify' => true]);

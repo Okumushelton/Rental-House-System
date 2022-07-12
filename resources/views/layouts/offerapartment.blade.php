@@ -6,10 +6,12 @@
           <button class="delete closeoffer" aria-label="close"></button>
       </header>
       <section class="modal-card-body">
-      <p class="subtitle is-6 has-text-centered"><strong class="has-text-danger"> A fee of 3,000 KShs is paid to book a house. <br />Upon booking your property, you are expected to move in within a week. <br /> Failure, your property will be given to another client.</strong></p>
-      <form action="/apartment/{{$apartment->id}}/offer" method="post">
+      <p class="subtitle is-6 has-text-centered"><strong class="has-text-danger">Upon booking your property. You are expected to move in within a week. <br /> Failure, your property will be given to another client.</strong></p>
+      <form action="/apartment/{{$apartment->id}}/book" method="post">
           @csrf
           <div class="field">
+          <p class="modal-card-title has-text-centered"><b>Pay KShs. 3000 to book house</b></p>
+
               <div class="control column is-8 is-offset-2">
                   <h6>Enter Your Phone Number</h6>
                   <input class="input is-6" type="text" placeholder="Enter phone number to initiate payment">
@@ -25,7 +27,7 @@
       <footer class="modal-card-foot is-centered has-text-centered">
         <p class="subtitle is-7 has-text-centered">When making any payments we recommend that you have a verified method of contact of the payment receiver such as their home/business address or e-mail address.
         </p>
-      </footer>
+      </footer>v
   </div>
 </div>
 

@@ -15,11 +15,9 @@
 //      */
 //     public function index()
 //     {
-//         $posts = Post::all();
-
 //         return response()->json([
 //             'status' => true,
-//             'posts' => $posts,
+//             'posts' => null,
 //         ]);
 //     }
 

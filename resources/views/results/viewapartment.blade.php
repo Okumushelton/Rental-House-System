@@ -62,15 +62,15 @@
                             <div class="columns">
                                 <div class="column detailscolumn">
                                     <p>Property Type: <span class="has-text-weight-semibold">{{$apartment->property->type}}</span></p>
-                                    <p>Bedrooms: <span class="has-text-weight-semibold">{{$apartment->noOfRooms}}</span></p>
+                                    <p>Rooms: <span class="has-text-weight-semibold">{{$apartment->noOfRooms}}</span></p>
                                     <p>Kitchen: <span class="has-text-weight-semibold">{{$apartment->noOfKitchen}}</span></p>
                                     <p>No. of Washrooms: <span class="has-text-weight-semibold">{{$apartment->noOfWashrooms}}</span></p>
                                     <p>Area of Property(Square Feet): <span class="has-text-weight-semibold">{{$apartment->size}}</span></p>
                                 </div>
                                 <div class="column">
                                     <p>Nearest School: <span class="has-text-weight-semibold">{{$apartment->nearestSchool}}</span></p>
-                                    <p>Nearest Busstop: <span class="has-text-weight-semibold">{{$apartment->nearestRailway}}</span></p>
-                                    <p>Nearest Railway Station: <span class="has-text-weight-semibold">{{$apartment->nearestBusStop}}</span></p>
+                                    <p>Nearest Railway Station: <span class="has-text-weight-semibold">{{$apartment->nearestRailway}}</span></p>
+                                    <p>Nearest Busstop: <span class="has-text-weight-semibold">{{$apartment->nearestBusStop}}</span></p>
                                     <p>Availability: @if(strcmp($apartment->property->availability,"YES") == 0)
                                         <span class="has-text-weight-semibold has-text-success">
                                             {{$apartment->property->availability}}
@@ -133,7 +133,7 @@
                                     <!-- 0.00 -->
                                 @endif
                             <!-- </span> KShs</p> -->
-                            <div id="myBtn"><button class="button is-link">Book House</button></div>
+                            <div id="myBtn"><button class="button is-link">Book Apartment</button></div>
                             <br>
                             @include('results.offeralerts')
                         </div>

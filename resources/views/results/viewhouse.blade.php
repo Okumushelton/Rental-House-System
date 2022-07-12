@@ -63,7 +63,7 @@
                             <div class="columns">
                                 <div class="column detailscolumn">
                                     <p>Property Type: <span class="has-text-weight-semibold">{{$house->property->type}}</span></p>
-                                    <p>Bedrooms: <span class="has-text-weight-semibold">{{$house->noOfRooms}}</span></p>
+                                    <p>Rooms: <span class="has-text-weight-semibold">{{$house->noOfRooms}}</span></p>
                                     <p>Kitchen: <span class="has-text-weight-semibold">{{$house->noOfKitchen}}</span></p>
                                     <p>No. of Washrooms: <span class="has-text-weight-semibold">{{$house->noOfWashrooms}}</span></p>
                                     <p>No. of floors: <span class="has-text-weight-semibold">{{$house->noOfFloors}}</span></p>
@@ -73,8 +73,8 @@
                                 <div class="column">
                                     <p>Area of Property(Square Feet): <span class="has-text-weight-semibold">{{$house->size}}</span></p>
                                     <p>Nearest School: <span class="has-text-weight-semibold">{{$house->nearestSchool}}</span></p>
-                                    <p>Nearest Busstop: <span class="has-text-weight-semibold">{{$house->nearestRailway}}</span></p>
-                                    <p>Nearest Railway Station: <span class="has-text-weight-semibold">{{$house->nearestBusStop}}</span></p>
+                                    <p>Nearest Railway Station:<span class="has-text-weight-semibold">{{$house->nearestRailway}}</span></p>
+                                    <p>Nearest Busstop:  <span class="has-text-weight-semibold">{{$house->nearestBusStop}}</span></p>
                                     <p>Availability: @if(strcmp($house->property->availability,"YES") == 0)
                                         <span class="has-text-weight-semibold has-text-success">
                                             {{$house->property->availability}}
