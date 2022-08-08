@@ -141,13 +141,29 @@
         </div>
       </div>
 
+      <h3 class="title is-3 has-text-grey-darker has-text-centered">Keep in Touch with Us</h3>
+        <p class="title is-6 has-text-white has-text-centered">Keep in touch in case for enquiries, <br />clarifications or suggestions </p>
+      {{-- Deatils Section  --}}
+    <div class="columns is-mobile is-centered details">
+      <div class="column"></div>
 
+      <div class="has-text-centered indexicon">
+                <span class="icon has-text-white is-large">
+                  <i class="fas fa-home fa-5x"></i><br />
+                  <span class="icon has-text-black is-large">
+                  <i class="fas fa-home fa-5x"></i>
+                </span>
+                </span>
 
-    {{-- Footer --}}
+                {{-- Footer --}}
     @include('layouts.footer')
 
 
       {{-- JavaScript Files --}}
+            </div>
+
+      <div class="column"></div>
+    </div>
       <script src="/js/jquery-3.3.1.min.js"></script>
       <script src="/js/fontawesome.js"></script>
       <script>

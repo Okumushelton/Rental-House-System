@@ -11,6 +11,12 @@
 <body>
 <footer class="">
     <div class="content has-text-centered has-text-blue">
+        <!-- <span class="icon has-text-white is-large">
+                  <i class="fas fa-home fa-5x"></i>
+                    <span class="is-centered has-text-success">
+                    <i class="fas fa-home fa-5x"></i>
+                    </span>
+        </span> -->
         <p class="has-text-white has-text-centered">
         <strong class="has-text-white">hyrax</strong><a href="" class="has-text-white"> Investments Ltd.</a><br />
         <small class="has-text-white">1284, Moi Avenue, <br />Nairobi</small>

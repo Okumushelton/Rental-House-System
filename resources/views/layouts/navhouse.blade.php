@@ -13,7 +13,7 @@
 
   <div id="navid" class="navbar-menu">
     <div class="navbar-start">
-      <a class="navbar-item menutext" href="/house">
+      <a class="navbar-item menutext thisactive" href="/house">
                 Houses
             </a>
 

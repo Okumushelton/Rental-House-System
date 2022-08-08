@@ -65,7 +65,7 @@
             </div>
         </div>
         <div class="column profileback tableshow">
-          <div class="title is-5 has-text-success">Recent Offers</div>
+          <div class="title is-5 has-text-success">My Property</div>
           <div style="overflow-x: auto;">
           <table class="table">
             <thead>
@@ -75,7 +75,7 @@
                 <th>Pro. Name</th>
                 <th>Pro. Location</th>
                 <th>Pro. Type</th>
-                <th>Offer</th>
+                <th>Book Amount.</th>
                 <th>Offered User</th>
                 <th>Contact</th>
               </tr>
@@ -108,11 +108,11 @@
                 @endforeach
               @else
               <tr>
-                  <td class="has-text-danger">No Result</td>
-                  <td class="has-text-danger">No Result</td>
-                  <td class="has-text-danger">No Result</td>
-                  <td class="has-text-danger">No Result</td>
-                  <td class="has-text-danger">No Result</td>
+                  <td class="has-text-danger">No Data</td>
+                  <td class="has-text-danger">No Data</td>
+                  <td class="has-text-danger">No Data</td>
+                  <td class="has-text-danger">No Data</td>
+                  <td class="has-text-danger">No Data</td>
                   <td class="has-text-danger">No Result</td>
                   <td class="has-text-danger">No Result</td>
                   <td><a href="" class="button is-success disabled nounnounderlinebtn" disabled>Contact</a></td>

@@ -30,21 +30,45 @@
             {{-- <img class="image face" src="/img/nyumba.png"> --}}
             <div class='equal-height'>
                 <div class='is-flex is-horizontal-center'>
-                    <figure class=''><img class="image face" src='/img/vector.jpg' width="250" height="400"></figure>
+                    <figure class=''><img class="image face" src='/img/nyumba1.png' width="250" height="400"></figure> <!-- vector.jpg -->
                 </div>
             </div>
             <br>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br />
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, <br />
-            when an unknown printer took a galley of type and scrambled it to make a type specimen book.<br />
-            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. <br />
-            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-            <br /> and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                <p><i><b>This is Sample Text</b></i></p>
+            <h3 class="title is-3 has-text-grey-darker has-text-centered">Hyrax Online Rental House Booking</h3>
+
+            <p>Welcome to Hyrax Online Rental House Booking, <br /> Your number one source for all things rental property. We're dedicated to giving you the very best of rental property, with a focus on speed, trust, efficiency.
+                <br>
+
+                <p>Founded in 2022 by Okumu Shelton, Hyrax has come a long way from its beginnings in January 2022. When Shelton first started out, his passion for fast and trustworthy drove him to do tons of search so that Rental Property can offer you the world's most advanced Rental Housing search engine.
+                    Hyrax now serves customers all over the world, and are thrilled that we're able to turn our passion into our own website.</p>
+                <br>
+                <p>We hope you enjoy our service as much as we enjoy offering them to you. If you have any questions or comments, please don't hesitate to contact us.</p>
+                <br>
+                <p><i><b>Okumu K. Shelton</b></i></p>
         </div>
     </div>
 
-    {{-- Footer --}} @include('layouts.footer') {{-- JavaScript Files --}}
+    {{-- Deatils Section  --}}
+    <div class="columns is-mobile is-centered details">
+      <div class="column"></div>
+
+      <div class="has-text-centered indexicon">
+                <span class="icon has-text-white is-large">
+                  <i class="fas fa-home fa-5x"></i><br />
+                  <span class="icon has-text-black is-large">
+                  <i class="fas fa-home fa-5x"></i>
+                </span>
+                </span>
+
+                {{-- Footer --}}
+    @include('layouts.footer')
+
+
+      {{-- JavaScript Files --}}
+            </div>
+
+      <div class="column"></div>
+    </div>
     <script src="/js/jquery-3.3.1.min.js"></script>
     <script src="/js/fontawesome.js"></script>
 </body>

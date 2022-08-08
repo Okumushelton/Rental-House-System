@@ -38,5 +38,5 @@
                 </div>
             </div>
             <h2>No results</h2>
-            <p><em>We searched far and wide <br/> Search not found.</em></p>
+            <p><em>Your Search could not find any property in our database. <br/> Search not found.</em></p>
         </div>

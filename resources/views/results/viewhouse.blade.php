@@ -311,17 +311,6 @@
 
             </div>
             {{-- Contact Owner Emaik --}}
-            <!-- <div class="notification is-danger">
-                <button class="delete"></button>
-                <strong>Important information:</strong> This ad has been posted on Hyrax.lk by the above mentioned
-                advertiser. Hyrax does not have any connection with this advertiser, nor do we vet the advertisers,
-                guarantee their services, responsible for the accuracy of the ad's content or are responsible for services
-                provided by the advertisers. Hyrax does not provide any service other than list the advertisements
-                posted by advertisers. You will be contacting the advertiser (owner/agent) of this property directly. We
-                advise you to take precaution when making any payments or signing any agreements and be alert of any possible
-                scams. If making any payments we recommend that you have two permanent & verified methods of contact of the
-                payment receiver such as their landline number and home/business address.
-            </div> -->
             <a class="is-pulled-right reportad" id="report"><span><i class="far fa-flag"></i></span><span class="has-text-balck"> Report Advertisement</span></a>
             <br>
 

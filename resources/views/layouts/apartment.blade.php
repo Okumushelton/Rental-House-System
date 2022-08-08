@@ -144,19 +144,19 @@
         </div>
     </div>
 
-
-
-
-
-
+    <h3 class="title is-3 has-text-grey-darker has-text-centered">Apartments</h3>
+        <p class="title is-6 has-text-white has-text-centered">Search for Apartment in areas within Nairobi, eg Kileleshwa<br />Booking Payment is done online. No cash is accepted </p>
 
     {{-- Deatils Section  --}}
     <div class="columns is-mobile is-centered details">
       <div class="column"></div>
 
-           <div class="has-text-centered indexicon">
+      <div class="has-text-centered indexicon">
                 <span class="icon has-text-white is-large">
+                  <i class="fas fa-home fa-5x"></i><br />
+                  <span class="icon has-text-black is-large">
                   <i class="fas fa-home fa-5x"></i>
+                </span>
                 </span>
 
                 {{-- Footer --}}
@@ -165,9 +165,6 @@
 
       {{-- JavaScript Files --}}
             </div>
-
-
-
 
       <div class="column"></div>
     </div>

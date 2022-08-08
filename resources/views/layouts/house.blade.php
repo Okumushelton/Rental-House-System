@@ -14,11 +14,10 @@
     <link href="https://fonts.googleapis.com/css?family=Exo+2:300i,400,400i,500,500i,600|Kanit:300,300i,400,400i,500,500i,600" rel="stylesheet">
 </head>
 <body>
-
     <div class="column is-full is-mobile backgroundimg">
         <div class="container">
             <div class="column is-mobile is-centered">
-                @include('layouts.navmaster');
+                @include('layouts.navhouse');
             </div>
         </div>
         <div class="container">
@@ -32,7 +31,6 @@
                           <span class="has-text-red">Houses</span>
                         </a>
                       </li>
-
                       <li class="is-active  tabitem">
                         <a href="/apartment">
                           <span class="has-text-white">Apartments</span>
@@ -41,7 +39,6 @@
 
                     </ul>
                   </div>
-
                   {{-- Search Box --}}
                 <form method="POST" action="/house/search">
                   @csrf
@@ -119,10 +116,10 @@
                             <i class="fas fa-walking"></i>
                           </span>
                         </div>
-                        <!-- <label class="checkbox checktext has-text-white">
+                        <label class="checkbox checktext has-text-white">
                             <input type="checkbox" name="swimmingpool" value="yes">
                             Swimming pool
-                        </label> -->
+                        </label>
                         <label class="checkbox checktext has-text-white">
                             <input type="checkbox" name="balcony">
                             Balcony
@@ -137,19 +134,12 @@
                 </form>
                </div>
             </div>
-
         </div>
     </div>
-    </div
+</div>
 
-
-
-
-
-
-
-
-
+<h3 class="title is-3 has-text-grey-darker has-text-centered">Houses</h3>
+        <p class="title is-6 has-text-white has-text-centered">Search for houses in areas within Nairobi, <br />Booking Payment is done online. No cash is accepted </p>
 
     {{-- Deatils Section  --}}
     <div class="columns is-mobile is-centered details">
@@ -157,10 +147,11 @@
 
            <div class="has-text-centered indexicon">
                 <span class="icon has-text-white is-large">
+                  <i class="fas fa-home fa-5x"></i><br />
+                  <span class="icon has-text-black is-large">
                   <i class="fas fa-home fa-5x"></i>
                 </span>
-           </div>
-
+                </span>
 
                 {{-- Footer --}}
     @include('layouts.footer')
@@ -169,17 +160,8 @@
       {{-- JavaScript Files --}}
             </div>
 
-
-
-
       <div class="column"></div>
     </div>
-
-
-
-
-
-
       <script src="/js/jquery-3.3.1.min.js"></script>
       <script src="/js/fontawesome.js"></script>
 </body>

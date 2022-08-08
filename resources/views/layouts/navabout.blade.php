@@ -1,7 +1,7 @@
 <nav class="navbar is-transparent navcolor">
     <div class="navbar-brand">
       <a class="navbar-item" href="/">
-        <img src="img/nyumba1.png" width="112" height="28">
+      <img src="img/logoblack1.png" width="160" height="60">
       </a>
       <div class="navbar-burger burger navcolor" onclick="document.querySelector('.navbar-menu').classList.toggle('is-active');" data-target="navid">
         <span></span>

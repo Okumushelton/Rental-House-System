@@ -1,7 +1,7 @@
 <div class="container">
     <div class="is-centered">
         <a class="navbar-item is-centered is-horizontal-center" href="/">
-            <img src="/img/nyumba1.png"  width="112" height="28">
+            <img src="/img/logoblack1.png"  width="112" height="28">
         </a>
         <div class="buttons is-centered">
         @guest

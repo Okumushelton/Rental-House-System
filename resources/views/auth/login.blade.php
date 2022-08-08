@@ -22,7 +22,7 @@
         <div class="column is-offset-1 is-half leftsideeffect">
             <a href="/">
                 <figure class="image is-blacklogo">
-                    <img src="img/nyumba1.png" width="112" height="28">
+                    <img src="img/nyumba1.png" width="100%" height="100%">
                 </figure>
             </a>
             <div class="is-mobile textboxlogin">
