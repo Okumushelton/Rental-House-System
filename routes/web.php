@@ -47,7 +47,7 @@ Route::post('/house/{house}/offer', 'OfferController@houseOffer');
 //Mpesa
 Route::post('/house/{house}/book', 'MpesaController@mpesaCheckout');
 
-Route::post('/apartment/{apartment}/book', 'MpesaController@mpesaCheckout');
+Route::post('/apartment/{apartment}/book', 'BookController@apartmentCheckout');
 
 Route::post('/house/{house}/contactowner', 'UserEmailController@houseContact');
 Route::post('/house/{house}/report', 'ReportPropertyController@houseReport');

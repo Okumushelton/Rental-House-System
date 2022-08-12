@@ -17,9 +17,9 @@
 </head>
 
 <body>
-    @include('results.navresult')
+    <!-- @include('results.navresult') -->
     <br>
-    <div class="title has-text-centered">Select Property Type</div>
+    <div class="title has-text-centered">PROPERTY TYPE</div>
     <br>
     <div class="container downmargin">
         <div class="columns is-variable is-1-mobile is-0-tablet is-3-desktop is-8-widescreen is-2-fullhd">

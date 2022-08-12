@@ -22,9 +22,9 @@
 </head>
 
 <body>
-    @include('results.navresult')
+    <!-- @include('results.navresult') -->
     <br>
-    <div class="title has-text-centered">Add Your Apartment</div>
+    <div class="title has-text-centered">ADD APARTMENT</div>
     <br>
     <div class="container">
         <div class="columns is-mobile is-centered">

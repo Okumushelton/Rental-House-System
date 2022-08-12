@@ -35,13 +35,26 @@ class ProfileController extends Controller
     public function loadUserDashboard(){
 
         $id = Auth::user()->id;
-        $offers = $offers = Offer::whereHas('property', function($query) use ($id) 
-        {
-            $query->where('user_id','=', $id);
+        // $offers = $offers = Offer::whereHas('user', function($query) use ($id)
+        // {
+        //     $query->where('id','=', $id);
 
-        })->limit(5)
+        // })->limit(5)
+        //   ->orderBy('id', 'desc')
+        //   ->get();
+
+
+          $offers = Offer::whereHas('property', function($query) use ($id)
+          {
+              $query->where('offeredUser','=', $id);
+
+          })->limit(5)
           ->orderBy('id', 'desc')
           ->get();
+
+        //   $offers = Offer::where('offeredUser','=', $id)->limit(5)
+        //   ->orderBy('id', 'desc')
+        //   ->get();
 
         return view('profile.home', compact('offers'),array('user' => Auth::user()));
     }
@@ -49,7 +62,7 @@ class ProfileController extends Controller
     public function updateAccount(Request $request)
     {
         $id = Auth::user()->id;
-        
+
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string', 'email|max:255|unique:users',
@@ -91,13 +104,13 @@ class ProfileController extends Controller
         if(!(Hash::check(request('current_password'),Auth::user()->password))){
 
             return back()->with("errormsg","Your current password does not matches with the password you provided. Please try again.");
-            
+
         }
 
         if(strcmp(request('current_password'),request('password')) == 0){
 
             return back()->with("warningmsg","New Password cannot be same as your current password. Please choose a different password.");
-            
+
         }
 
         $user = Auth::user();
@@ -111,7 +124,7 @@ class ProfileController extends Controller
     public function allOffers(){
 
         $id = Auth::user()->id;
-        $offers = Offer::whereHas('property', function($query) use ($id) 
+        $offers = Offer::whereHas('property', function($query) use ($id)
         {
             $query->where('user_id','=', $id);
 
@@ -123,7 +136,7 @@ class ProfileController extends Controller
     public function myOffers(){
 
         $id = Auth::user()->id;
-        $offers = Offer::whereHas('property', function($query) use ($id) 
+        $offers = Offer::whereHas('property', function($query) use ($id)
         {
             $query->where('offeredUser','=', $id);
 
@@ -135,14 +148,14 @@ class ProfileController extends Controller
     public function myMessage()
     {
         $id = Auth::user()->id;
-        $messages = UserEmail::where(function($query) use ($id) 
+        $messages = UserEmail::where(function($query) use ($id)
         {
             $query->where('receiver_id','=', $id);
 
         })->where(function ($query){
 
             $query->where('status', 'LIKE', 'unread');
-    
+
         })->orderBy('id', 'desc')
           ->paginate(10);
 
@@ -155,7 +168,7 @@ class ProfileController extends Controller
         $updateMessage = UserEmail::find($id);
         $updateMessage->status = 'read';
         $updateMessage->save();
-        
+
         return view('profile.home',compact('message') ,array('user' => Auth::user()));
 
     }
@@ -173,14 +186,14 @@ class ProfileController extends Controller
 
             Alert::error('Your request has been denied by the system', 'Unauthorized Attempt')->autoclose(3000);
             return redirect('/profile/message');
-            
+
         }
     }
 
     public function viewAllMessage()
     {
         $id = Auth::user()->id;
-        $messages = UserEmail::where(function($query) use ($id) 
+        $messages = UserEmail::where(function($query) use ($id)
         {
             $query->where('receiver_id','=', $id);
 
@@ -201,7 +214,7 @@ class ProfileController extends Controller
 
         return view('profile.home', compact('favorites'),array('user' => Auth::user()));
     }
-    
+
     public function deleteFavorites(Favorite $favorite)
     {
         if ($favorite->user_id == auth()->id()) {
@@ -215,7 +228,7 @@ class ProfileController extends Controller
 
             Alert::error('Your request has been denied by the system', 'Unauthorized Attempt')->autoclose(3000);
             return redirect('/profile/myfavorite');
-            
+
         }
     }
 
@@ -246,7 +259,7 @@ class ProfileController extends Controller
 
             Alert::error('Your request has been denied by the system', 'Unauthorized Attempt')->autoclose(3000);
             return redirect('/profile/sold');
-            
+
         }
     }
 
@@ -265,13 +278,13 @@ class ProfileController extends Controller
 
             Alert::error('Your request has been denied by the system', 'Unauthorized Attempt')->autoclose(3000);
             return redirect('/profile/sold');
-            
+
         }
     }
 
     public function contactOffers(Offer $offer)
     {
-        
+
         $user = User::find($offer->offeredUser);
         return view('profile.home', compact('user','offer'),array('user' => Auth::user()));
 
@@ -279,7 +292,7 @@ class ProfileController extends Controller
 
     public function contactOffersOwner(Offer $offer)
     {
-        
+
         $user = User::find($offer->property->user->id);
         return view('profile.home', compact('user','offer'),array('user' => Auth::user()));
 
@@ -301,30 +314,30 @@ class ProfileController extends Controller
                     DB::table('houses')->where('property_id', '=', $property->id)->delete();
 
                 }elseif(strcmp($propertyType,'land')){
-                    
+
                     DB::table('lands')->where('property_id', '=', $property->id)->delete();
 
                 }elseif(strcmp($propertyType,'building')){
-                    
+
                     DB::table('buildings')->where('property_id', '=', $property->id)->delete();
-                    
+
                 }elseif(strcmp($propertyType,'apartment')){
-                    
+
                     DB::table('apartments')->where('property_id', '=', $property->id)->delete();
-                    
+
                 }elseif(strcmp($propertyType,'warehouse')){
-                    
+
                     DB::table('warehouses')->where('property_id', '=', $property->id)->delete();
-                    
+
                 }else{
                     Alert::error('Your request has been denied by the system', 'System Error')->autoclose(3000);
                     return redirect('/profile');
-                }    
+                }
 
                 //delete main property
                 DB::table('properties')->where('id', '=', $property->id)->delete();
             }
-            
+
             DB::table('users')->where('id', '=', $user->id)->delete();
 
             Alert::success('Your account has been deleted successfully!', 'Successfully Deleted!')->autoclose(3000);
@@ -334,7 +347,7 @@ class ProfileController extends Controller
 
             Alert::error('Your request has been denied by the system', 'Unauthorized Attempt')->autoclose(3000);
             return redirect('/profile');
-            
+
         }
     }
 

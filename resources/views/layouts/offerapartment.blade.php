@@ -14,7 +14,7 @@
 
               <div class="control column is-8 is-offset-2">
                   <h6>Enter Your Phone Number</h6>
-                  <input class="input is-6" type="text" placeholder="Enter phone number to initiate payment">
+                  <input class="input is-6" type="text" name="phone_number" placeholder="Enter phone number starting with 254">
                   <input name="propertyid" type="text" value="{{$apartment->property_id}}" hidden>
                   <input name="apartmentid" type="text" value="{{$apartment->id}}" hidden>
               </div>

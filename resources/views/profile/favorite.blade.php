@@ -12,15 +12,15 @@
             <div class="row">
                     @if($favorites->count() > 0)
                     @foreach ($favorites as $favorite)
-                        @include('profile.threadfavorite') 
-                    @endforeach 
+                        @include('profile.threadfavorite')
+                    @endforeach
                     @else
                         @include('profile.noresult')
                     @endif
             </div>
             {{ $favorites->links() }}
         </div>
-        
+
     </div>
 </div>
 <script>
@@ -34,12 +34,12 @@
         showCancelButton: true,
         confirmButtonColor: "hsl(141, 71%, 48%)",
         cancelButtonColor: "hsl(348, 100%, 61%)",
-        confirmButtonText: 'Yes, delete it!',
+        confirmButtonText: 'Yes, Remove from Favorites!',
         cancelButtonText: 'No, cancel!',
         reverseButtons: true
     }).then((result) => {
         if (result.value) {
-            
+
             form.submit();
 
         } else if (

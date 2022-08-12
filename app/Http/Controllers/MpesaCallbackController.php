@@ -67,7 +67,7 @@ class MpesaCallbackController extends Controller
 
         return response()->json([
             'status' => true,
-            'message' => "Posted successfully!",
+            'message' => "Posted Successfully!",
             'post' => $mpesa,
         ], 200);
     }

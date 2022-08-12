@@ -27,18 +27,18 @@
         </div>
       @endif
         <div class="columns dashboxes profileback">
-            <div class="column has-text-centered selecticon" onclick="location.href='/'">
+            <!-- <div class="column has-text-centered selecticon" onclick="location.href='/'">
               <span class="icon has-text-centered is-large">
                 <i class="fas fa-home fa-4x"></i>
               </span>
               <h6 class="is-uppercase has-text-weight-bold">View Your House</h6>
-            </div>
-            <div class="column has-text-centered selecticon" onclick="location.href='/profile/myfavorite'">
+            </div> -->
+            <!-- <div class="column has-text-centered selecticon" onclick="location.href='/profile/myfavorite'">
               <span class="icon has-text-centered is-large">
                 <i class="fas fa-heart fa-4x"></i>
               </span>
               <h6 class="is-uppercase has-text-weight-bold">Favorites</h6>
-            </div>
+            </div> -->
             <div class="column has-text-centered selecticon" onclick="location.href='/profile/message'">
               <span class="icon has-text-centered is-large">
                 <i class="fas fa-comments fa-4x"></i>
@@ -57,15 +57,15 @@
               </span>
               <h6 class="is-uppercase has-text-weight-bold">Mark Sold</h6>
             </div> -->
-            <div class="column has-text-centered selecticon" onclick="location.href='/'">
+            <!-- <div class="column has-text-centered selecticon" onclick="location.href='/'">
               <span class="icon has-text-centered is-large">
                 <i class="fas fa-search fa-4x"></i>
               </span>
               <h6 class="is-uppercase has-text-weight-bold">Search</h6>
-            </div>
+            </div> -->
         </div>
         <div class="column profileback tableshow">
-          <div class="title is-5 has-text-success">My Property</div>
+          <div class="is-uppercase has-text-weight-bold">My Property</div>
           <div style="overflow-x: auto;">
           <table class="table">
             <thead>
@@ -76,7 +76,8 @@
                 <th>Pro. Location</th>
                 <th>Pro. Type</th>
                 <th>Book Amount.</th>
-                <th>Offered User</th>
+                <th>Property Issued To</th>
+                <th>Book Status.</th>
                 <th>Contact</th>
               </tr>
             </thead>
@@ -87,8 +88,9 @@
                   <th>Pro. Name</th>
                   <th>Pro. Location</th>
                   <th>Pro. Type</th>
-                  <th>Current Offer</th>
-                  <th>Offered User</th>
+                  <th>Book Amount.</th>
+                  <th>Property Issued To</th>
+                  <th>Book Status.</th>
                   <th>Contact</th>
               </tr>
             </tfoot>
@@ -96,13 +98,14 @@
               @if(count($offers))
                   @foreach ($offers as $key=>$offer)
                   <tr>
-                    <td>{{$key+1}}</td>
-                    <td>{{$offer->property_id}}</td>
-                    <td>{{$offer->property->name}}</td>
-                    <td>{{$offer->property->city}}</td>
-                    <td>{{$offer->property->type}}</td>
-                    <td>{{number_format($offer->offerAmount,2)}}</td>
-                    <td>{{userNameById($offer->offeredUser)}}</td>
+                    <td class="has-text-danger">{{$key+1}}</td>
+                    <td class="has-text-danger">{{$offer->property_id}}</td>
+                    <td class="has-text-danger">{{$offer->property->name}}</td>
+                    <td class="has-text-danger">{{$offer->property->city}}</td>
+                    <td class="has-text-danger">{{$offer->property->type}}</td>
+                    <td class="has-text-danger">{{number_format($offer->offerAmount,2)}} KShs.</td>
+                    <td class="has-text-danger">{{userNameById($offer->offeredUser)}}</td>
+                    <td class="has-text-danger">Booked</td>
                     <td><a href="/profile/offers/{{$offer->id}}/contact" class="button is-success nounnounderlinebtn">Contact</a></td>
                   </tr>
                 @endforeach
@@ -113,6 +116,7 @@
                   <td class="has-text-danger">No Data</td>
                   <td class="has-text-danger">No Data</td>
                   <td class="has-text-danger">No Data</td>
+                  <td class="has-text-danger">No Result</td>
                   <td class="has-text-danger">No Result</td>
                   <td class="has-text-danger">No Result</td>
                   <td><a href="" class="button is-success disabled nounnounderlinebtn" disabled>Contact</a></td>

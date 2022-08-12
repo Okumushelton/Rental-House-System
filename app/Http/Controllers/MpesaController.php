@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 namespace App\Http\Controllers;
 
 use Alert;
+use App\Mpesa;
 use App\Property;
 use App\Transfer;
 use Illuminate\Http\Request;
+use App\Http\Requests\CallbackRequest;
+use App\Offer;
 
 class MpesaController extends Controller
 {
@@ -18,31 +21,30 @@ class MpesaController extends Controller
         $consumer_key = 'X3gEgUrk3NiT3fbLM8L72axL8aGCKKQT';
         $consumer_secret = 'E5NAAwbGRbcdIyNe';
         $Business_Code = '174379';
-         $Passkey = 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919';
+        $Passkey = 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919';
         $Token_URL = 'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials';
         $Time_Stamp = date("Ymdhis");
 
-
 /*
-        // curl_Tranfer is the variable for the curl handle
-        $curl_Tranfer = curl_init();
-        curl_setopt($curl_Tranfer, CURLOPT_URL, $Token_URL);
-        $credentials = base64_encode($consumer_key . ':' . $consumer_secret);
-        curl_setopt($curl_Tranfer, CURLOPT_HTTPHEADER, array('Authorization:Basic ' . $credentials));
-        // curl_setopt($curl_Tranfer, CURLOPT_HEADER, false);
-        curl_setopt($curl_Tranfer, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($curl_Tranfer, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt($curl_Tranfer, CURLOPT_FAILONERROR, true);
-        $curl_Tranfer_response = curl_exec($curl_Tranfer);
+// curl_Tranfer is the variable for the curl handle
+$curl_Tranfer = curl_init();
+curl_setopt($curl_Tranfer, CURLOPT_URL, $Token_URL);
+$credentials = base64_encode($consumer_key . ':' . $consumer_secret);
+curl_setopt($curl_Tranfer, CURLOPT_HTTPHEADER, array('Authorization:Basic ' . $credentials));
+// curl_setopt($curl_Tranfer, CURLOPT_HEADER, false);
+curl_setopt($curl_Tranfer, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($curl_Tranfer, CURLOPT_SSL_VERIFYPEER, false);
+curl_setopt($curl_Tranfer, CURLOPT_FAILONERROR, true);
+$curl_Tranfer_response = curl_exec($curl_Tranfer);
 
-        if (curl_errno($curl_Tranfer)) {
-            $error_msg = curl_error($curl_Tranfer);
-        }
-        curl_close($curl_Tranfer);
+if (curl_errno($curl_Tranfer)) {
+$error_msg = curl_error($curl_Tranfer);
+}
+curl_close($curl_Tranfer);
 
-        if (isset($error_msg)) {
-            return $error_msg . "  ::::::: ";
-        }*/
+if (isset($error_msg)) {
+return $error_msg . "  ::::::: ";
+}*/
 
         $ch = curl_init('https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials');
         curl_setopt($ch, CURLOPT_HTTPHEADER, ['Authorization: Basic cFJZcjZ6anEwaThMMXp6d1FETUxwWkIzeVBDa2hNc2M6UmYyMkJmWm9nMHFRR2xWOQ==']);
@@ -107,6 +109,8 @@ class MpesaController extends Controller
             }
         }
 
+        $this->bookApartment();
+
     }
 
     public function bookHouse()
@@ -117,21 +121,51 @@ class MpesaController extends Controller
         $transfer->property_id = request('propertyid');
         $transfer->house_id = request('houseid');
         $transfer->booking_user = auth()->id();
-        $transfer->Amount = 500;
+        $transfer->Amount = 3000;
         $transfer->save();
 
         Alert::success('Booking successful!', 'Offer Submitted')->autoclose(3000);
         return back()->with("success", "House Booked successful!");
     }
 
-    public function updateBookHouse(){
+    public function updateBookHouse(CallbackRequest $request)
+    {
+
+        $mpesa = new Mpesa();
+        $mpesa->RRN = $request->RRN;
+        $mpesa->ResponseCode = $request->ResponseCode;
+        $mpesa->ResponseDescription = $request->ResponseDescription;
+        $mpesa->MpesaTranID = $request->MpesaTranID;
+        $mpesa->ReceiverName = $request->ReceiverName;
+        $mpesa->ReceiverMsisdn = $request->ReceiverMsisdn;
+        $mpesa->MobileNumber = $request->MobileNumber;
+        // $mpesa->TimeStamp = $request->TimeStamp;
+        $mpesa->Amount = $request->Amount;
+
+        $mpesa->save();
+
+
 
         $transfer = Transfer::find(request('RRN'));
 
-        if(request("ResponseCode")==="0"){
-            $transfer->status = "booked";
+        if (request("ResponseCode") === "0") {
+            $transfer->status = "Booked";
             $transfer->save();
         }
+
+
+        // $transfer = Transfer::find(request('RRN'));
+
+        if (request("ResponseCode") === "0") {
+
+            $offer = new Offer();
+            $offer->property_id = $transfer->property_id;
+            $offer->house_id = $transfer->house_id;
+            $offer->offeredUser = $transfer->booking_user;
+            $offer->offerAmount = $transfer->Amount;
+            $offer->save();
+        }
+
 
         return response()->json([
             'status' => true,
@@ -149,10 +183,28 @@ class MpesaController extends Controller
         $transfer->property_id = request('propertyid');
         $transfer->apartment_id = request('apartmentid');
         $transfer->booking_user = auth()->id();
-        $transfer->Amount = 500;
+        $transfer->Amount = 000;
         $transfer->save();
 
         Alert::success('Booking successful!', 'Offer Submitted')->autoclose(3000);
         return back()->with("success", "Apartment Booked successful!");
+    }
+
+    public function updateBookApartment()
+    {
+
+        $transfer = Transfer::find(request('RRN'));
+
+        if (request("ResponseCode") === "0") {
+            $transfer->status = "Booked";
+            $transfer->save();
+        }
+
+        return response()->json([
+            'status' => true,
+            'message' => "Posted Successfully!",
+            'post' => $transfer,
+        ], 200);
+
     }
 }

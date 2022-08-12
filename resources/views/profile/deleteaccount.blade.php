@@ -8,10 +8,10 @@
     </nav>
     <div class="card cardmargin">
         <div class="containerx">
-            <h1 class="title has-text-centered">Delete Your Account</h1>
+            <h1 class="title has-text-centered">Delete My Account</h1>
             <div class="centerinputbox has-text-centered">
-                <div class="subtitle">Do you want to delete your account, your account won't be able recover again. Please contine with your own risk.</div>
-                <div class="subtitle is-6 has-text-link has-text-weight-bold">Improtant: Your all properties will also be deteled.</div>
+                <div class="subtitle">Do you really want to delete your account, your won't be able to recover you account again.</div>
+                <div class="subtitle is-6 has-text-link has-text-weight-bold">Important: You won't be Assigned to this property anymore and it will be assigned to someone else.</div>
                 <form action="/profile/user/{{auth()->user()->id}}/delete" method="post">
                     @csrf
                     <button class="button is-danger" type="submit" onclick="deleteMe();">Delete Account</button>
@@ -38,7 +38,7 @@
         reverseButtons: true
     }).then((result) => {
         if (result.value) {
-            
+
             form.submit();
 
         } else if (

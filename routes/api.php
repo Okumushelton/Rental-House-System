@@ -19,4 +19,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('/mpesa/callback', 'MpesaController@updateBookHouse');
-Route::get('/mpesa/callback', 'MpesaCallbackController@index');
+// Route::post('/mpesa/callback', 'MpesaController@updateBookApartment');
+// Route::get('/mpesa/callback', 'MpesaCallbackController@index');
+//

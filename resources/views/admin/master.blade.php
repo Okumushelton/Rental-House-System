@@ -54,7 +54,7 @@
           <li><a href="/admin/property/house">Houses</a></li>
           <li><a href="/admin/property/apartment">Apartments</a></li>
           <ul class="menu-list adminlistitem">
-          <li><a href="/admin/addproperty">Add Property</a></li>
+          <li><a href="/admin/addproperty" target="_blank">Add Property</a></li>
         </ul>
 
         </ul>
