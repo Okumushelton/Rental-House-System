@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreatePropertiesTable extends Migration
 {
@@ -27,6 +27,7 @@ class CreatePropertiesTable extends Migration
             $table->text('description');
             $table->string('images');
             $table->string('availability');
+            $table->string('assigned_to');
             $table->string('contactNo');
             $table->string('contatctEmail');
             $table->timestamps();

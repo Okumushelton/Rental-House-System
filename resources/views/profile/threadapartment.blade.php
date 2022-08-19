@@ -14,17 +14,17 @@
                         <p class="is-6">
                             <span class="has-text-dark">Name :</span> {{$apartment->property->name}} <br>
                             <span class="has-text-dark">Location :</span> {{$apartment->property->city}} <br>
-                            <span class="has-text-dark">Est :</span> KShs. {{number_format($apartment->property->amount,2)}}</p>
+                            <span class="has-text-dark">Monthly Rent :</span> KShs. {{number_format($apartment->property->amount,2)}}</p>
                     </div>
                 </div>
 
                 <div class="content">
                     <div class="buttons is-pulled-right">
-                            <button class="button is-success is-pulled-right" onclick="window.open('/apartment/{{$apartment->id}}','_blank');">See More</button>
-                            <button class="button is-warning is-pulled-right" onclick="window.open('/profile/apartment/{{$apartment->id}}/edit','_blank');">Edit</button>
+                            <button class="button is-success is-pulled-left" onclick="window.open('/apartment/{{$apartment->id}}','_blank');">VIEW APARTMENT</button>
+                            <!-- <button class="button is-warning is-pulled-right" onclick="window.open('/profile/apartment/{{$apartment->id}}/edit','_blank');">Edit</button> -->
                             <form action="/profile/apartment/{{$apartment->id}}/delete" method="post">
                                 @csrf
-                                <button class="button is-danger is-pulled-right" type="submit" onclick="deleteMe();">Delete</button>
+                                <!-- <button class="button is-danger is-pulled-right" type="submit" onclick="deleteMe();">Delete</button> -->
                             </form>
                     </div>
                 </div>

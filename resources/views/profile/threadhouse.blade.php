@@ -15,17 +15,17 @@
                         <p class="is-6">
                             <span class="has-text-dark">Name :</span> {{$house->property->name}} <br>
                             <span class="has-text-dark">Location :</span> {{$house->property->city}} <br>
-                            <span class="has-text-dark">Est :</span> KShs. {{number_format($house->property->amount,2)}}</p>
+                            <span class="has-text-dark">Monthly Rate :</span> KShs. {{number_format($house->property->amount,2)}}</p>
                     </div>
                 </div>
 
                 <div class="content">
                     <div class="buttons is-pulled-right">
-                        <button class="button is-success is-pulled-right" onclick="window.open('/house/{{$house->id}}','_blank');">See More</button>
-                        <button class="button is-warning is-pulled-right" onclick="window.open('/profile/house/{{$house->id}}/edit','_blank');">Edit</button>
+                        <button class="button is-success is-pulled-right" onclick="window.open('/house/{{$house->id}}','_blank');">VIEW HOUSE</button>
+                        <!-- <button class="button is-warning is-pulled-right" onclick="window.open('/profile/house/{{$house->id}}/edit','_blank');">Edit</button> -->
                         <form action="/profile/house/{{$house->id}}/delete" method="post">
                             @csrf
-                            <button class="button is-danger is-pulled-right" type="submit" onclick="deleteMe();">Delete</button>
+                            <!-- <button class="button is-danger is-pulled-right" type="submit" onclick="deleteMe();">Delete</button> -->
                         </form>
                     </div>
                 </div>

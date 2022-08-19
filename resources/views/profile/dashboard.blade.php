@@ -76,9 +76,9 @@
                 <th>Pro. Location</th>
                 <th>Pro. Type</th>
                 <th>Book Amount.</th>
-                <th>Property Issued To</th>
+                <th>Property Assigned To</th>
                 <th>Book Status.</th>
-                <th>Contact</th>
+                <th>Contact Admin</th>
               </tr>
             </thead>
             <tfoot>
@@ -89,9 +89,9 @@
                   <th>Pro. Location</th>
                   <th>Pro. Type</th>
                   <th>Book Amount.</th>
-                  <th>Property Issued To</th>
+                  <th>Property Assigned To</th>
                   <th>Book Status.</th>
-                  <th>Contact</th>
+                  <th>Contact Admin</th>
               </tr>
             </tfoot>
             <tbody>
@@ -116,15 +116,15 @@
                   <td class="has-text-danger">No Data</td>
                   <td class="has-text-danger">No Data</td>
                   <td class="has-text-danger">No Data</td>
-                  <td class="has-text-danger">No Result</td>
-                  <td class="has-text-danger">No Result</td>
-                  <td class="has-text-danger">No Result</td>
-                  <td><a href="" class="button is-success disabled nounnounderlinebtn" disabled>Contact</a></td>
+                  <td class="has-text-danger">No Data</td>
+                  <td class="has-text-danger">No Data</td>
+                  <td class="has-text-danger">No Data</td>
+                  <td><a href="" class="button is-success disabled nounnounderlinebtn" disabled>Contact Admin</a></td>
                 </tr>
               @endif
             </tbody>
           </table>
           </div>
-          <a href="/profile/alloffers" class="button is-link nounnounderlinebtn is-pulled-right">View All Offers</a>
+          <!-- <a href="/profile/alloffers" class="button is-link nounnounderlinebtn is-pulled-right">View All Offers</a> -->
         </div>
     </div>

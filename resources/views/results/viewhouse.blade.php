@@ -97,16 +97,24 @@
                                         <button class="button is-success" onclick="showPnox()">Show Contact Number</button>
                                         <p class="has-text-dark customerpno" id="pnox"><a href="tel:{{$house->property->contactNo}}" class="nounnounderlinelink">{{$house->property->contactNo}}</a></p>
                                         <hr>
-                                        <p class="owneramount">Owner Estimated: <span class="has-text-success has-text-weight-bold">{{number_format($house->property->amount,2)}}</span>                      KSHs</p>
+                                        <p class="owneramount">Owner Estimated ghghghghghgh: <span class="has-text-success has-text-weight-bold">{{number_format($house->property->amount,2)}}</span>                      KSHs</p>
                                         <!-- <p class="bidamount">Current Highest Offer: <span class="has-text-danger has-text-weight-bold">
                                                 @if ($house->offers->count() > 0)
                                                     {{number_format($house->offers->sortBy('offerAmount')->last()->offerAmount,2)}}
                                                 @else
                                                     0.00
                                                 @endif
-                                            </span> LKR</p> -->
-                                        <div id="myBtnM"><button class="button is-link">BOOK HOUSE</button></div>
-    @include('results.offeralerts')
+                                            </span> KShs</p> -->
+                                        <div id="myBtn">
+                                    @if ($house->property->assigned_to == '')
+                                        <button  class="button is-link">Book House kkkk {{$house->property->assigned_to}}</button>
+                                    @else
+                                    <button disabled class="button is-link">Book House</button>
+                                    @endif
+                                    </div>
+
+                                <br />
+                                    @include('results.offeralerts')
                                     </div>
 
                                 </div>
@@ -127,7 +135,7 @@
                         <button class="button is-success" onclick="showPno()">Call Owner</button>
                         <p class="has-text-dark customerpno" id="pno"><a href="tel:{{$house->property->contactNo}}" class="nounnounderlinelink">{{$house->property->contactNo}}</a></p>
                         <hr>
-                        <p class="owneramount">Owner Estimated: <span class="has-text-success has-text-weight-bold">{{number_format($house->property->amount,2)}}</span>                   KSHs</p>
+                        <p class="owneramount">Monthly Rate: <span class="has-text-success has-text-weight-bold">{{number_format($house->property->amount,2)}}</span>                   KSHs</p>
                         <!-- <p class="bidamount">Current Highest Offer: <span class="has-text-danger has-text-weight-bold">
                             @if ($house->offers->count() > 0)
                                 {{number_format($house->offers->sortBy('offerAmount')->last()->offerAmount,2)}}
@@ -135,7 +143,13 @@
                                 0.00
                             @endif
                         </span> LKR</p> -->
-                        <div id="myBtn"><button class="button is-link">BOOK HOUSE</button></div>
+                        <div id="myBtn">
+                                    @if ($house->property->assigned_to == '')
+                                        <button  class="button is-link">BOOK HOUSE</button>
+                                    @else
+                                    <button disabled class="button is-link">BOOK HOUSE</button>
+                                    @endif
+                        </div>
                         <br>
     @include('results.offeralerts')
                     </div>

@@ -37,6 +37,6 @@
                     <i class="fa fa-file fa-7x"></i>
                 </div>
             </div>
-            <h2>Nothing to Display</h2>
+            <h2>No Property Assigned To You.</h2>
             <p><em>If you think something wrong here, please contact us.</em></p>
         </div>

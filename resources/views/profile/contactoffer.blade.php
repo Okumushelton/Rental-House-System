@@ -3,7 +3,7 @@
         <nav class="breadcrumb has-arrow-separator profileback breadcrumbcss" aria-label="breadcrumbs">
           <ul>
             <li><a href="/profile">Profile</a></li>
-            <li class="is-active"><a href="/profile">Contact Offer</a></li>
+            <li class="is-active"><a href="/profile">Contact Admin</a></li>
           </ul>
         </nav>
         <div class="column profileback upmemargin">
@@ -46,15 +46,15 @@
                       <img src="/uploads/avatars/{{$user->avatar}}" alt="Image" class="is-rounded">
                     </figure>
                     <div class="address">
-                      <div class="has-text-link has-text-weight-semibold">Offer Amount: KShs. {{number_format($offer->offerAmount,2)}}</div>
+                      <div class="has-text-link has-text-weight-semibold">Booking Amount: KShs. {{number_format($offer->offerAmount,2)}}</div>
                       <div class="is-7"><span class="subtitle is-7">To: {{$user->name}}
                             <span class="subtitle is-7 has-text-black-bis has-text-weight-bold"> (Registered User) </span>
                         </span>
                       </div>
                       <div class="subtitle is-7">Contact Details:<span class="subtitle is-7"> {{$user->email}} | {{$user->phoneNo}}</span></div>
-                      <div class="subtitle is-7 is-pulled-right">Regarding :<span class="subtitle is-7"> <a href="/{{checkPropertyTypeByOfferId($offer->id)}}/{{getPropertyTypeIdByOfferId($offer->id)}}" target="_blank">View Property</a></span>
+                      <div class="subtitle is-7 is-pulled-right"><span class="subtitle is-7"> <a href="/{{checkPropertyTypeByOfferId($offer->id)}}/{{getPropertyTypeIdByOfferId($offer->id)}}" target="_blank"></a></span>
                         <br>
-                      <span class="subtitle is-7 has-text-right">Offer Sent :<span class="has-text-black-bis has-text-weight-bold">{{$offer->created_at->diffForHumans()}}</span></span></div>
+                      <span class="subtitle is-7 has-text-right">Booked :<span class="has-text-black-bis has-text-weight-bold">{{$offer->created_at->diffForHumans()}}</span></span></div>
                     </div>
                   </div>
                 </div>
@@ -69,7 +69,7 @@
                             <input type="hidden" value="{{$offer->offeredUser}}" name="owner">
                             <input type="hidden" value="Regarding {{$offer->property->name}} Offer" name="subject">
                             <input type="hidden" value="/{{checkPropertyTypeByOfferId($offer->id)}}/{{getPropertyTypeIdByOfferId($offer->id)}}" name="path">
-                            <textarea class="textarea {{ $errors->has('message') ? ' is-danger' : '' }}" placeholder="Enter your reply for this offer"
+                            <textarea class="textarea {{ $errors->has('message') ? ' is-danger' : '' }}" placeholder="Please specify on how we can help you"
                               name="message"></textarea> {!! $errors->first('message', '
                             <p class="help-block has-text-danger">:message</p>') !!}
                           </div>

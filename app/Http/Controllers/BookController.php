@@ -163,6 +163,13 @@ return $error_msg . "  ::::::: ";
             $offer->save();
         }
 
+        $property = Property::find($transfer->property_id);
+
+        if (true) {
+            $property->assigned_to = $transfer->booking_user;
+            $property->availability = $transfer='LOCKED';
+            $property->save();
+        }
 
         return response()->json([
             'status' => true,

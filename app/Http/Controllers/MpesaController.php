@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 namespace App\Http\Controllers;
 
 use Alert;
+use App\Http\Requests\CallbackRequest;
 use App\Mpesa;
+use App\Offer;
 use App\Property;
 use App\Transfer;
 use Illuminate\Http\Request;
-use App\Http\Requests\CallbackRequest;
-use App\Offer;
 
 class MpesaController extends Controller
 {
@@ -144,15 +144,12 @@ return $error_msg . "  ::::::: ";
 
         $mpesa->save();
 
-
-
         $transfer = Transfer::find(request('RRN'));
 
         if (request("ResponseCode") === "0") {
             $transfer->status = "Booked";
             $transfer->save();
         }
-
 
         // $transfer = Transfer::find(request('RRN'));
 
@@ -166,6 +163,13 @@ return $error_msg . "  ::::::: ";
             $offer->save();
         }
 
+        $property = Property::find($transfer->property_id);
+
+        if (true) {
+            $property->assigned_to = $transfer->booking_user;
+            $property->availability = $transfer ='LOCKED';
+            $property->save();
+        }
 
         return response()->json([
             'status' => true,
@@ -175,36 +179,36 @@ return $error_msg . "  ::::::: ";
 
     }
 
-    public function bookApartment()
-    {
-        $property = Property::find(request('propertyid'));
+    // public function bookApartment()
+    // {
+    //     $property = Property::find(request('propertyid'));
 
-        $transfer = new Transfer();
-        $transfer->property_id = request('propertyid');
-        $transfer->apartment_id = request('apartmentid');
-        $transfer->booking_user = auth()->id();
-        $transfer->Amount = 000;
-        $transfer->save();
+    //     $transfer = new Transfer();
+    //     $transfer->property_id = request('propertyid');
+    //     $transfer->apartment_id = request('apartmentid');
+    //     $transfer->booking_user = auth()->id();
+    //     $transfer->Amount = 000;
+    //     $transfer->save();
 
-        Alert::success('Booking successful!', 'Offer Submitted')->autoclose(3000);
-        return back()->with("success", "Apartment Booked successful!");
-    }
+    //     Alert::success('Booking successful!', 'Offer Submitted')->autoclose(3000);
+    //     return back()->with("success", "Apartment Booked successful!");
+    // }
 
-    public function updateBookApartment()
-    {
+    // public function updateBookApartment()
+    // {
 
-        $transfer = Transfer::find(request('RRN'));
+    //     $transfer = Transfer::find(request('RRN'));
 
-        if (request("ResponseCode") === "0") {
-            $transfer->status = "Booked";
-            $transfer->save();
-        }
+    //     if (request("ResponseCode") === "0") {
+    //         $transfer->status = "Booked";
+    //         $transfer->save();
+    //     }
 
-        return response()->json([
-            'status' => true,
-            'message' => "Posted Successfully!",
-            'post' => $transfer,
-        ], 200);
+    //     return response()->json([
+    //         'status' => true,
+    //         'message' => "Posted Successfully!",
+    //         'post' => $transfer,
+    //     ], 200);
 
-    }
+    // }
 }

@@ -94,7 +94,7 @@ class PageController extends Controller
         $userId = auth()->id();
         $houses = House::whereHas('property', function ($query) use ($userId) {
 
-            $query->where('user_id', '=', $userId);
+            $query->where('assigned_to', '=', $userId);
 
         })->paginate(15);
 
@@ -106,7 +106,7 @@ class PageController extends Controller
         $userId = auth()->id();
         $apartments = Apartment::whereHas('property', function ($query) use ($userId) {
 
-            $query->where('user_id', '=', $userId);
+            $query->where('assigned_to', '=', $userId);
 
         })->paginate(15);
 

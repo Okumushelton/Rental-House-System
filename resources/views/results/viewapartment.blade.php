@@ -126,14 +126,20 @@
                         <p class="has-text-dark customerpno" id="pno"><a href="tel:{{$apartment->property->contactNo}}" class="nounnounderlinelink">{{$apartment->property->contactNo}}</a></p>
                         <hr>
                         <p class="owneramount">Monthly Rate: <span class="has-text-success has-text-weight-bold">{{number_format($apartment->property->amount,2)}}</span>                            KShs</p>
-                        <!-- <p class="bidamount">Current Highest Offer: <span class="has-text-danger has-text-weight-bold"> -->
+                        <!-- <p class="bidamount">Current Highest Offer: <span class="has-text-danger has-text-weight-bold">
                                 @if ($apartment->offers->count() > 0)
                                     {{number_format($apartment->offers->sortBy('offerAmount')->last()->offerAmount,2)}}
                                 @else
-                                    <!-- 0.00 -->
-                                @endif
-                            <!-- </span> KShs</p> -->
-                            <div id="myBtn"><button class="button is-link">Book Apartment</button></div>
+                                     0.00
+                                    @endif
+                            </span> KShs</p> -->
+                            <div id="myBtn">
+                                    @if ($apartment->property->assigned_to == '')
+                                        <button  class="button is-link">BOOK APARTMENT</button>
+                                    @else
+                                    <button disabled class="button is-link">BOOK APARTMENT</button>
+                                    @endif
+                        </div>
                             <br>
                             @include('results.offeralerts')
                         </div>
