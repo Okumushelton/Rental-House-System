@@ -167,7 +167,7 @@ return $error_msg . "  ::::::: ";
 
         if (true) {
             $property->assigned_to = $transfer->booking_user;
-            $property->availability = $transfer ='LOCKED';
+            $property->availability = $transfer ='BOOKED';
             $property->save();
         }
 

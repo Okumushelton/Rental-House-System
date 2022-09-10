@@ -66,7 +66,7 @@
                         <p class="control has-icons-left">
                             <input
                                 class="input {{ $errors->has('password') ? ' is-danger' : '' }} s-black inputline is-medium"
-                                id="password" type="password" name="password" placeholder="Password" required>
+                                id="password" type="text" name="password" placeholder="Password" required>
                             <span class="icon is-small is-left">
                                 <i class="fas fa-lock"></i>
                             </span>
@@ -80,7 +80,7 @@
 
                     <div class="field">
                         <p class="control has-icons-left">
-                            <input id="password-confirm" type="password" class="input s-black inputline is-medium"
+                            <input id="password-confirm" type="text" class="input s-black inputline is-medium"
                                 name="password_confirmation" placeholder="Confirm Password" required>
                             <span class="icon is-small is-left">
                                 <i class="fas fa-lock"></i>

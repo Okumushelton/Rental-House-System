@@ -61,7 +61,7 @@ class ApartmentController extends Controller
             });
         })->whereHas('property', function ($query) {
 
-            $query->where('availability', 'LIKE', "YES");
+            // $query->where('availability', 'LIKE', "YES");
 
         })->whereHas('property', function ($query) use ($minPrice, $maxPrice) {
 

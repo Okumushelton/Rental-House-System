@@ -27,7 +27,8 @@ class CreatePropertiesTable extends Migration
             $table->text('description');
             $table->string('images');
             $table->string('availability');
-            $table->string('assigned_to');
+            // $table->string('assigned_to');
+            $table->string('assigned_to')->nullable(true);
             $table->string('contactNo');
             $table->string('contatctEmail');
             $table->timestamps();

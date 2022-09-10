@@ -90,19 +90,18 @@
                                     </div>
                                     <div class="subtitle has-text-centered"><span>@</span>{{$apartment->property->user->name}}</div>
                                     <div class="has-text-centered">
-                                        <button class="button is-success" onclick="showPnox()">Show Contact Number</button>
+                                        <button class="button is-success" onclick="showPnox()">Call Owner</button>
                                         <p class="has-text-dark customerpno" id="pnox"><a href="tel:{{$apartment->property->contactNo}}" class="nounnounderlinelink">{{$apartment->property->contactNo}}</a></p>
                                         <hr>
-                                        <p class="owneramount">Owner Estimated: <span class="has-text-success has-text-weight-bold">{{number_format($apartment->property->amount,2)}}</span>                                            KShs</p>
-                                        <p class="bidamount">Current Highest Offer: <span class="has-text-danger has-text-weight-bold">
-                                                @if ($apartment->offers->count() > 0)
-                                                    {{number_format($apartment->offers->sortBy('offerAmount')->last()->offerAmount,2)}}
+                                        <p class="owneramount">Monthly Rate: <span class="has-text-success has-text-weight-bold">{{number_format($apartment->property->amount,2)}}</span>                                            KShs</p>
+
+                                            <div id="myBtn">
+                                                @if ($apartment->property->assigned_to == '')
+                                                    <button  class="button is-link">BOOK APARTMENT</button>
                                                 @else
-                                                    0.00
+                                                <button disabled class="button is-link">PROPERTY NOT AVAILABLE</button>
                                                 @endif
-                                                0.00
-                                            </span> KShs</p>
-                                        <div id="myBtnM"><button class="button is-link">BOOK HOUSE</button></div>
+                                            </div>
                                         <br>
                                         @include('results.offeralerts')
                                     </div>
@@ -126,18 +125,12 @@
                         <p class="has-text-dark customerpno" id="pno"><a href="tel:{{$apartment->property->contactNo}}" class="nounnounderlinelink">{{$apartment->property->contactNo}}</a></p>
                         <hr>
                         <p class="owneramount">Monthly Rate: <span class="has-text-success has-text-weight-bold">{{number_format($apartment->property->amount,2)}}</span>                            KShs</p>
-                        <!-- <p class="bidamount">Current Highest Offer: <span class="has-text-danger has-text-weight-bold">
-                                @if ($apartment->offers->count() > 0)
-                                    {{number_format($apartment->offers->sortBy('offerAmount')->last()->offerAmount,2)}}
-                                @else
-                                     0.00
-                                    @endif
-                            </span> KShs</p> -->
-                            <div id="myBtn">
+
+                            <div id="myBtnM">
                                     @if ($apartment->property->assigned_to == '')
                                         <button  class="button is-link">BOOK APARTMENT</button>
                                     @else
-                                    <button disabled class="button is-link">BOOK APARTMENT</button>
+                                    <button disabled class="button is-link">PROPERTY NOT AVAILABLE</button>
                                     @endif
                         </div>
                             <br>
@@ -346,7 +339,7 @@
         });
       }
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKNG_uMsCgUvpLc_Adr2n9nwo6BWOImoM&libraries=places&callback=initMap"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbOgBhAPNKgrV5SHmLFZIAzZRYGpsTJoU&libraries=places&callback=initMap"
         async defer></script>
 
     <script>

@@ -33,15 +33,16 @@
                 <p class="subtitle has-text-link is-7 is-pulled-right has-text-weight-bold is-uppercase">Count : {{$properties->count()}}</p>
                 <table class="table">
                     <thead>
-                        <tr>
+                    <tr>
                             <th>No</th>
                             <th>Name</th>
                             <th>Location</th>
                             <th>Type</th>
                             <th>Amount</th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
+                            <th>Availability</th>
+                            <th>View</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tfoot>
@@ -51,9 +52,10 @@
                             <th>Location</th>
                             <th>Type</th>
                             <th>Amount</th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
+                            <th>Availability</th>
+                            <th>View</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
                         </tr>
                     </tfoot>
                     <tbody>
@@ -64,7 +66,8 @@
                             <td>{{$property->city}}</td>
                             <td>{{$property->type}}</td>
                             <td>{{number_format($property->amount,2)}}</td>
-                            <td><a href="/{{checkPropertyTypeById($property->id)}}/{{getPropertyTypeIdById($property->id)}}" class="button is-success nounnounderlinebtn" target="_blank"><i class="fas fa-external-link-square-alt"></i></a></td> 
+                            <td>{{$property->availability}}</td>
+                            <td><a href="/{{checkPropertyTypeById($property->id)}}/{{getPropertyTypeIdById($property->id)}}" class="button is-success nounnounderlinebtn" target="_blank"><i class="fas fa-external-link-square-alt"></i></a></td>
                             <td><a href="/admin/{{checkPropertyTypeById($property->id)}}/{{getPropertyTypeIdById($property->id)}}/edit" class="button is-warning nounnounderlinebtn" target="_blank"><i class="fa fa-edit"></i></a></td>
                             <td>
                                 <form action="/admin/{{checkPropertyTypeById($property->id)}}/{{getPropertyTypeIdById($property->id)}}/delete" method="post">
@@ -100,7 +103,7 @@
         reverseButtons: true
     }).then((result) => {
         if (result.value) {
-            
+
             form.submit();
 
         } else if (

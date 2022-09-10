@@ -442,7 +442,7 @@ class AdminController extends Controller
     {
 
         $property = Property::find($property->id);
-        $property->availability = 'LOCKED';
+        $property->availability = 'BOOKED';
         $property->save();
 
         $message = new MailNotification;
@@ -456,7 +456,7 @@ class AdminController extends Controller
 
         \Mail::to($message->receiver_email)->send(new EmailNotification($message));
 
-        Alert::success('Property has been locked!', 'LOCKED!')->autoclose(3000);
+        Alert::success('Property has been locked!', 'BOOKED!')->autoclose(3000);
         return back();
 
     }

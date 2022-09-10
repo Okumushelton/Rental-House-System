@@ -81,7 +81,7 @@
       <li class="is-active"><a href="/admin">Dashboard</a></li>
     </ul>
   </nav>
-  <div class="subtitle has-text-black-bis">Summary Report</div>
+  <div class="subtitle has-text-black-bis"><b>Summary Report</b></div>
   <div class="columns">
     <div class="column">
         <div id="chart_div">
@@ -99,7 +99,7 @@
     </div>
   </div>
   <hr>
-  <div class="subtitle has-text-black-bis">Latest Properties</div>
+  <div class="subtitle has-text-black-bis"><b>Latest Properties</b></div>
   <div class="column tableshow" style="overflow-x: auto">
     <table class="table">
       <thead>
@@ -109,6 +109,7 @@
           <th>Pro. Name</th>
           <th>Pro. Location</th>
           <th>Pro. type</th>
+          <th>Availability</th>
           <th>Pro. Amount</th>
           <th>Added By</th>
           <th>View</th>
@@ -121,6 +122,7 @@
           <th>Pro. Name</th>
           <th>Pro. Location</th>
           <th>Pro. type</th>
+          <th>Availability</th>
           <th>Pro. Amount</th>
           <th>Added By</th>
           <th>View</th>
@@ -134,6 +136,7 @@
           <td>{{$property->name}}</td>
           <td>{{$property->city}}</td>
           <td>{{$property->type}}</td>
+          <td>{{$property->availability}}</td>
           <td>{{number_format($property->amount,2)}}</td>
           <td>{{$property->user->name}}</td>
           <td><a href="/{{checkPropertyTypeById($property->id)}}/{{getPropertyTypeIdById($property->id)}}" class="button is-success nounnounderlinebtn"
@@ -144,7 +147,7 @@
     </table>
   </div>
   <hr>
-  <div class="subtitle has-text-black-bis">Latest User Registations</div>
+  <div class="subtitle has-text-black-bis"><b>Latest User Registrations</b></div>
   <div class="column tableshow" style=" overflow-x: auto ">
             <table class="table ">
               <thead>
@@ -153,7 +156,7 @@
                   <th>User Id</th>
                   <th>User Name</th>
                   <th>User Email</th>
-                  <th>Pro. Type</th>
+                  <!-- <th>Pro. Type</th> -->
                   <th>Status</th>
                   <th>View User</th>
                 </tr>
@@ -164,7 +167,7 @@
                   <th>User Id</th>
                   <th>User Name</th>
                   <th>User Email</th>
-                  <th>Pro. Type</th>
+                  <!-- <th>Pro. Type</th> -->
                   <th>Status</th>
                   <th>View User</th>
                 </tr>

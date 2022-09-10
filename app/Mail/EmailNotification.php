@@ -28,7 +28,7 @@ class EmailNotification extends Mailable
      */
     public function build()
     {
-        return $this->subject('New Message - Hyrax')
+        return $this->subject('Hyrax')
         // ('New Message - Realproperty.LK')
             ->markdown('emails.emailnotification');
     }

@@ -64,26 +64,26 @@
                             <td>{{$report->property->type}}</td>
                             <td>{{$report->reporterEmail}}</td>
                             <td>{{$report->Reason}}</td>
-                            <td><a href="/{{checkPropertyTypeById($report->property->id)}}/{{getPropertyTypeIdById($report->property->id)}}" class="button is-success nounnounderlinebtn" target="_blank"><i class="fas fa-external-link-square-alt"></i></a></td> 
+                            <td><a href="/{{checkPropertyTypeById($report->property->id)}}/{{getPropertyTypeIdById($report->property->id)}}" class="button is-success nounnounderlinebtn" target="_blank"><i class="fas fa-external-link-square-alt"></i></a></td>
                             <td><a href="/admin/{{checkPropertyTypeById($report->property->id)}}/{{getPropertyTypeIdById($report->property->id)}}/edit" class="button is-warning nounnounderlinebtn" target="_blank"><i class="fa fa-edit"></i></a></td>
-                            
+
                             <td>
-                                <form 
-                                    @if(strcmp($report->property->availability,"LOCKED") == 0)
+                                <form
+                                    @if(strcmp($report->property->availability,"BOOKED") == 0)
                                         action="/admin/report/{{$report->property->id}}/unlock
                                     @else
                                         action="/admin/report/{{$report->property->id}}/lock
                                     @endif
                                     " method="post">
                                         @csrf
-                                        <button class="button 
-                                    @if(strcmp($report->property->availability,"LOCKED") == 0)    
+                                        <button class="button
+                                    @if(strcmp($report->property->availability,"BOOKED") == 0)
                                         is-dark
                                     @else
                                         is-danger
                                     @endif
-                                        nounnounderlinebtn" type="submit" 
-                                    @if(strcmp($report->property->availability,"LOCKED") == 0)
+                                        nounnounderlinebtn" type="submit"
+                                    @if(strcmp($report->property->availability,"BOOKED") == 0)
                                         onclick="unlock();"><i class="fas fa-unlock"></i></button>
                                     @else
                                         onclick="lock();"><i class="fas fa-lock"></i></button>
@@ -126,7 +126,7 @@
         reverseButtons: true
     }).then((result) => {
         if (result.value) {
-            
+
             form.submit();
 
         } else if (
@@ -158,7 +158,7 @@
         reverseButtons: true
     }).then((result) => {
         if (result.value) {
-            
+
             form.submit();
 
         } else if (

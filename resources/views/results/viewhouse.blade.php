@@ -94,10 +94,10 @@
                                     </div>
                                     <div class="subtitle has-text-centered"><span>@</span>{{$house->property->user->name}}</div>
                                     <div class="has-text-centered">
-                                        <button class="button is-success" onclick="showPnox()">Show Contact Number</button>
+                                        <button class="button is-success" onclick="showPnox()">Contact Owner</button>
                                         <p class="has-text-dark customerpno" id="pnox"><a href="tel:{{$house->property->contactNo}}" class="nounnounderlinelink">{{$house->property->contactNo}}</a></p>
                                         <hr>
-                                        <p class="owneramount">Owner Estimated ghghghghghgh: <span class="has-text-success has-text-weight-bold">{{number_format($house->property->amount,2)}}</span>                      KSHs</p>
+                                        <p class="owneramount">Monthly Rate: <span class="has-text-success has-text-weight-bold">{{number_format($house->property->amount,2)}}</span>                      KSHs</p>
                                         <!-- <p class="bidamount">Current Highest Offer: <span class="has-text-danger has-text-weight-bold">
                                                 @if ($house->offers->count() > 0)
                                                     {{number_format($house->offers->sortBy('offerAmount')->last()->offerAmount,2)}}
@@ -107,9 +107,9 @@
                                             </span> KShs</p> -->
                                         <div id="myBtn">
                                     @if ($house->property->assigned_to == '')
-                                        <button  class="button is-link">Book House kkkk {{$house->property->assigned_to}}</button>
+                                        <button  class="button is-link">Book House {{$house->property->assigned_to}}</button>
                                     @else
-                                    <button disabled class="button is-link">Book House</button>
+                                    <button disabled class="button is-link">PROPERTY NOT AVAILABLE</button>
                                     @endif
                                     </div>
 
@@ -136,18 +136,12 @@
                         <p class="has-text-dark customerpno" id="pno"><a href="tel:{{$house->property->contactNo}}" class="nounnounderlinelink">{{$house->property->contactNo}}</a></p>
                         <hr>
                         <p class="owneramount">Monthly Rate: <span class="has-text-success has-text-weight-bold">{{number_format($house->property->amount,2)}}</span>                   KSHs</p>
-                        <!-- <p class="bidamount">Current Highest Offer: <span class="has-text-danger has-text-weight-bold">
-                            @if ($house->offers->count() > 0)
-                                {{number_format($house->offers->sortBy('offerAmount')->last()->offerAmount,2)}}
-                            @else
-                                0.00
-                            @endif
-                        </span> LKR</p> -->
-                        <div id="myBtn">
+
+                        <div id="myBtnM">
                                     @if ($house->property->assigned_to == '')
                                         <button  class="button is-link">BOOK HOUSE</button>
                                     @else
-                                    <button disabled class="button is-link">BOOK HOUSE</button>
+                                    <button disabled class="button is-link">PROPERTY NOT AVAILABLE</button>
                                     @endif
                         </div>
                         <br>
@@ -172,7 +166,6 @@
                                     /* height: 678px; */
                                     width: 790px;
                                 }
-
                                 .gmap_canvas {
                                     overflow: hidden;
                                     background: none!important;
@@ -352,14 +345,13 @@
           center: {lat: lat, lng: lng},
           zoom: 15
         });
-
         var marker = new google.maps.Marker({
           position: {lat: lat, lng: lng},
           map: map,
         });
       }
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKNG_uMsCgUvpLc_Adr2n9nwo6BWOImoM&libraries=places&callback=initMap"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbOgBhAPNKgrV5SHmLFZIAzZRYGpsTJoU&libraries=places&callback=initMap"
         async defer></script>
 
     <script>
@@ -371,7 +363,6 @@
                 x.style.display = "none";
             }
         }
-
         function showPnox() {
             var x = document.getElementById("pnox");
             if (x.style.display === "none") {
