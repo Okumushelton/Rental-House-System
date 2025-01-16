@@ -1,4 +1,4 @@
-### Hyrax- School Project
+### Hyrax- Rental House Management System
 	
 ### Functions: Core-Site Functions
 - Front-End Design (UI) – Core-Site, User Profile, Admin Panel and Blog
